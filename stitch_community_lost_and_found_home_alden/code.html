@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lost &amp; Found Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#377986",
+                        "background-light": "#f9f7f5",
+                        "background-dark": "#1a2a2d",
+                        "accent-green": "#9BBF98",
+                        "accent-coral": "#FF9F80",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "sans": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#131516] dark:text-white transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="bg-primary p-2 rounded-lg text-white">
+<span class="material-symbols-outlined text-2xl">location_searching</span>
+</div>
+<h1 class="text-xl font-extrabold tracking-tight text-[#131516] dark:text-white">Foundry</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700">
+<span class="material-symbols-outlined text-[#131516] dark:text-white">person</span>
+</button>
+</header>
+<main class="pb-24">
+<!-- Hero Section -->
+<section class="px-4 pt-6 pb-4">
+<h2 class="text-3xl font-extrabold leading-tight tracking-tight mb-2 max-w-[80%]">
+                Lost something? <br/><span class="text-primary">We're here to help.</span>
+</h2>
+<p class="text-gray-500 dark:text-gray-400 mb-6 text-sm">Join the community helping return lost items to their owners.</p>
+<!-- Search Bar Component -->
+<div class="relative mb-6">
+<label class="flex flex-col min-w-40 h-14 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm">
+<div class="text-[#6c7c7f] flex border-none bg-white dark:bg-gray-800 items-center justify-center pl-4 rounded-l-xl">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#131516] dark:text-white focus:outline-0 focus:ring-0 border-none bg-white dark:bg-gray-800 focus:border-none h-full placeholder:text-[#6c7c7f] px-4 rounded-l-none pl-2 text-base font-medium" placeholder="Search for keys, pets, wallets..."/>
+</div>
+</label>
+</div>
+<!-- Main Actions -->
+<div class="grid grid-cols-2 gap-3">
+<button class="flex flex-col items-start justify-between p-4 bg-primary text-white rounded-xl h-32 shadow-lg shadow-primary/20 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-3xl">add_circle</span>
+<span class="font-bold text-left leading-tight">Report Lost Item</span>
+</button>
+<button class="flex flex-col items-start justify-between p-4 bg-white dark:bg-gray-800 text-[#131516] dark:text-white border border-gray-200 dark:border-gray-700 rounded-xl h-32 shadow-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined text-3xl text-primary">inventory_2</span>
+<span class="font-bold text-left leading-tight">Post Found Item</span>
+</button>
+</div>
+</section>
+<!-- Recent Finds Section -->
+<section class="mt-4">
+<div class="flex items-center justify-between px-4 mb-3">
+<h3 class="text-xl font-bold">Recent Finds</h3>
+<button class="text-primary text-sm font-bold">View all</button>
+</div>
+<div class="flex overflow-x-auto hide-scrollbar gap-4 px-4 pb-4">
+<!-- Item Card 1 -->
+<div class="flex-none w-64 bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700">
+<div class="h-40 w-full relative">
+<img class="w-full h-full object-cover" data-alt="Silver Apple Watch on a wooden surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOK5cc8Io9qgKd-CvVxNHV309i9ggt-9jfDOeSGyid7V8f7hHKc9DwV1aK7PrsE-XzG7jHm9ovhRQ_Atd4BhWnzDjeK5zrJvXIm0wpbUs0pKuSjzlDTpLGIhBtijkmbfKR0tq2zp3bVmQa2KIUEns35L143y14V3boqjHFNvUmddFv84lmacNK87-dyfEWlGSbHDxaDJpYP2aW2Zw7ZbxnlJU4hskxPTqdFMIh3E5_Fk_phEN9gNS2FnwoqUVR04T4rnJfh1NcHFQ"/>
+<div class="absolute top-2 left-2 bg-accent-green text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Just Now</div>
+</div>
+<div class="p-3">
+<h4 class="font-bold text-sm mb-1 truncate">Silver Apple Watch</h4>
+<div class="flex items-center text-gray-500 dark:text-gray-400 text-xs gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Central Park, NY</span>
+</div>
+</div>
+</div>
+<!-- Item Card 2 -->
+<div class="flex-none w-64 bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700">
+<div class="h-40 w-full relative">
+<img class="w-full h-full object-cover" data-alt="Brown leather wallet on a sidewalk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPAKnuiuQMWo7-5kjLrCD8BHilAZVgBhYBZyWfVQrQfPGm_OJHYa1E6ecUckb1Xcgy9Q6ZChdocuZSq564OdBuzVfdVJugceoVsJf0WZvwmzaoWk5dnaDvAmAZjtF2QLxjAdkpRhyJmSD4ba6q0wfsZZ99a3vJ2HKcOGajq_VGAvvJjC4GhuSDxNZThVrTUi8hifrMlD9LWYBedCBOT1X1NS2GqcFZxcgbGQ5F2F_oulbGb_jQQ386tNfZL6OAo19QUZSN_l9--yM"/>
+<div class="absolute top-2 left-2 bg-accent-coral text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Reward Offered</div>
+</div>
+<div class="p-3">
+<h4 class="font-bold text-sm mb-1 truncate">Leather Bi-fold Wallet</h4>
+<div class="flex items-center text-gray-500 dark:text-gray-400 text-xs gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Blue Line Train</span>
+</div>
+</div>
+</div>
+<!-- Item Card 3 -->
+<div class="flex-none w-64 bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700">
+<div class="h-40 w-full relative">
+<img class="w-full h-full object-cover" data-alt="Golden Retriever puppy sitting in grass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcQk24rUGcVO3Zk1P9nH6cVjGB3DFYVU9wkXzuGCU-YpdJ9bCqb456NF9qVvKP2HgNsA2D9kNpoRDcnf0-vf6mfivTk8xgjR7Pc-I11cQ6jx0KC3gb4-zcqfwJ0BTy3_rZjeaN9a2BfalR1JlSAsw_meRBRIFyAuiJh4vlBp8NApSObhuLqZvqmRyxeZxYdgxP0nEygSgdX4G67Rjt6z_54fhB9FsNRYn8wOtwPnCxOUIgEXaxlkahRmPvyi9E_ZKCJ4AKx6-8QDg"/>
+</div>
+<div class="p-3">
+<h4 class="font-bold text-sm mb-1 truncate">Golden Retriever</h4>
+<div class="flex items-center text-gray-500 dark:text-gray-400 text-xs gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Brooklyn Heights</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How it Works Section -->
+<section class="mt-8 px-4">
+<div class="bg-primary/5 dark:bg-white/5 rounded-2xl p-6">
+<h3 class="text-xl font-bold mb-6 text-center">How it works</h3>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="bg-primary/10 dark:bg-primary/20 p-3 rounded-xl text-primary">
+<span class="material-symbols-outlined">edit_note</span>
+</div>
+<div>
+<h4 class="font-bold text-sm">1. Report</h4>
+<p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mt-1">List your lost or found item with photos and specific details.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-primary/10 dark:bg-primary/20 p-3 rounded-xl text-primary">
+<span class="material-symbols-outlined">travel_explore</span>
+</div>
+<div>
+<h4 class="font-bold text-sm">2. Match</h4>
+<p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mt-1">Our system uses AI to find potential matches instantly across the city.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-primary/10 dark:bg-primary/20 p-3 rounded-xl text-primary">
+<span class="material-symbols-outlined">handshake</span>
+</div>
+<div>
+<h4 class="font-bold text-sm">3. Connect</h4>
+<p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mt-1">Securely message to arrange a safe return in a public location.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Map Section (Mini) -->
+<section class="mt-8 px-4 pb-12">
+<h3 class="text-xl font-bold mb-4">Nearby Activity</h3>
+<div class="relative h-48 w-full rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm">
+<img class="w-full h-full object-cover opacity-80 dark:opacity-40" data-alt="Abstract stylized map of Manhattan" data-location="New York City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCeV7UcXgLtlAXOT0hUmNbN-B4dW7qDdGaYuCu-6Vmx0bgLVQF9xzQC6JEJ6ZUYN4kVkQFADNmE4IBVWji7Q3t5_1TmU9V7YHtSH8lFmcgJ3cc-cuAqvlvxM9wPvbP2jFVX-Mo179VDa1bgQG8pr6o86tJH_8jHX8snnE2Jb3vl2k14JTwX88jsERWrvi6LVvA7wzQDdsgN1h779p6Y9lz_2Wp-6c9cpjdeOid9oI_Dw83u48utLuuwYE6Hj0zC0v1wGk-N2Sf5NE"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">map</span>
+<span class="text-xs font-bold">12 items found nearby</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Tab Bar (iOS style) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border-t border-gray-100 dark:border-gray-800 pb-8 pt-3 px-6 z-50">
+<div class="flex items-center justify-between max-w-md mx-auto">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[10px] font-medium">Browse</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px] font-medium">Alerts</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-[10px] font-medium">Messages</span>
+</button>
+</div>
+</nav>
+</body></html>

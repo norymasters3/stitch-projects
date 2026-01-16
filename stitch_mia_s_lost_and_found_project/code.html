@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Campus Lost &amp; Found Landing Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#389485",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#141e1c",
+                        "accent-yellow": "#F7E987",
+                        "accent-coral": "#FCE6DB",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .soft-lift {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .soft-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#131616] dark:text-white transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<div class="layout-container flex flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 md:px-20 py-4 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-3 text-[#131616] dark:text-white">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">search_check</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] font-display">Campus Reconnect</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Browse Items</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">How it Works</a>
+</nav>
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-all">
+<span>Login</span>
+</button>
+</div>
+</header>
+<main class="flex flex-col items-center">
+<!-- Hero Section -->
+<div class="w-full max-w-[1200px] px-6 py-12 md:py-20">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-4">
+<span class="px-3 py-1 bg-accent-yellow/30 text-primary-dark text-xs font-bold uppercase tracking-wider rounded-full w-fit">
+                                Verified Campus Service
+                            </span>
+<h1 class="text-[#131616] dark:text-white text-5xl md:text-6xl font-extrabold leading-[1.1] tracking-tight font-display">
+                                Reconnect with <br/><span class="text-primary">your things.</span>
+</h1>
+<p class="text-gray-600 dark:text-gray-400 text-lg md:text-xl font-normal max-w-lg">
+                                The official campus hub for reporting lost items and returning found belongings to their rightful owners.
+                            </p>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-6 bg-primary text-white text-base font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined mr-2">search</span>
+                                I Lost Something
+                            </button>
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-6 bg-white dark:bg-white/10 border-2 border-primary/20 text-primary dark:text-primary text-base font-bold hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined mr-2">front_hand</span>
+                                I Found Something
+                            </button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl group-hover:bg-primary/20 transition-all duration-500"></div>
+<div class="relative w-full aspect-[4/3] bg-white dark:bg-background-dark rounded-3xl overflow-hidden border border-primary/10 shadow-xl" data-alt="Modern illustration of students helping each other find lost items on campus">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent-yellow/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-9xl text-primary/40">location_searching</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Search & Filters -->
+<div class="w-full max-w-[960px] px-6 -mt-10 relative z-10">
+<div class="bg-white dark:bg-background-dark p-4 rounded-2xl shadow-xl border border-primary/5">
+<div class="flex flex-col gap-4">
+<label class="flex flex-col min-w-40 h-14 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full bg-background-light dark:bg-white/5">
+<div class="text-primary flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:ring-0 h-full placeholder:text-gray-400 px-4 text-base font-medium" placeholder="Search for AirPods, Textbooks, Keys..."/>
+</div>
+</label>
+<div class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white px-5 cursor-pointer">
+<p class="text-sm font-medium">All Items</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light dark:bg-white/5 px-5 hover:bg-primary/10 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-sm">laptop_mac</span>
+<p class="text-sm font-medium">Electronics</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light dark:bg-white/5 px-5 hover:bg-primary/10 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-sm">book</span>
+<p class="text-sm font-medium">Books</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light dark:bg-white/5 px-5 hover:bg-primary/10 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-sm">vpn_key</span>
+<p class="text-sm font-medium">Keys</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light dark:bg-white/5 px-5 hover:bg-primary/10 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-sm">badge</span>
+<p class="text-sm font-medium">ID Cards</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light dark:bg-white/5 px-5 hover:bg-primary/10 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-sm">apparel</span>
+<p class="text-sm font-medium">Clothing</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity Grid -->
+<div class="w-full max-w-[1100px] px-6 py-16">
+<div class="flex justify-between items-end mb-8 px-2">
+<div>
+<h2 class="text-3xl font-bold font-display tracking-tight">Recent Activity</h2>
+<p class="text-gray-500 dark:text-gray-400 mt-1">Happening right now on your campus</p>
+</div>
+<a class="text-primary font-bold text-sm flex items-center hover:underline" href="#">
+                        View all items
+                        <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group soft-lift flex flex-col bg-white dark:bg-white/5 rounded-2xl border border-primary/10 overflow-hidden">
+<div class="aspect-video w-full bg-background-light dark:bg-white/5 relative" data-alt="Silver Apple AirPods Pro with white case">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-gray-300">headphones</span>
+</div>
+<div class="absolute top-3 right-3 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter">
+                                Found
+                            </div>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 bg-accent-coral/40 text-xs font-semibold rounded text-primary-dark">Electronics</span>
+<span class="text-[11px] text-gray-400 font-medium">2 hours ago</span>
+</div>
+<h3 class="font-bold text-lg leading-tight group-hover:text-primary transition-colors">Silver AirPods Pro</h3>
+<div class="flex items-center text-gray-500 text-sm gap-1">
+<span class="material-symbols-outlined text-base">location_on</span>
+<span data-location="Campus Library">Main Library, 2nd Floor</span>
+</div>
+<div class="pt-2 border-t border-gray-100 dark:border-white/10 flex justify-between items-center">
+<a class="text-primary font-bold text-sm" href="#">View Details</a>
+<span class="material-symbols-outlined text-gray-300 text-lg">bookmark</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group soft-lift flex flex-col bg-white dark:bg-white/5 rounded-2xl border border-primary/10 overflow-hidden">
+<div class="aspect-video w-full bg-background-light dark:bg-white/5 relative" data-alt="Blue university student ID card">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-gray-300">account_box</span>
+</div>
+<div class="absolute top-3 right-3 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter">
+                                Found
+                            </div>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 bg-accent-yellow/40 text-xs font-semibold rounded text-primary-dark">ID Card</span>
+<span class="text-[11px] text-gray-400 font-medium">4 hours ago</span>
+</div>
+<h3 class="font-bold text-lg leading-tight group-hover:text-primary transition-colors">Student ID: "James W."</h3>
+<div class="flex items-center text-gray-500 text-sm gap-1">
+<span class="material-symbols-outlined text-base">location_on</span>
+<span data-location="Student Union">Student Union Cafe</span>
+</div>
+<div class="pt-2 border-t border-gray-100 dark:border-white/10 flex justify-between items-center">
+<a class="text-primary font-bold text-sm" href="#">View Details</a>
+<span class="material-symbols-outlined text-gray-300 text-lg">bookmark</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group soft-lift flex flex-col bg-white dark:bg-white/5 rounded-2xl border border-primary/10 overflow-hidden">
+<div class="aspect-video w-full bg-background-light dark:bg-white/5 relative" data-alt="Leather keychain with several keys">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-gray-300">key</span>
+</div>
+<div class="absolute top-3 right-3 bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter">
+                                Lost
+                            </div>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 bg-gray-100 dark:bg-white/10 text-xs font-semibold rounded text-gray-600">Keys</span>
+<span class="text-[11px] text-gray-400 font-medium">Yesterday</span>
+</div>
+<h3 class="font-bold text-lg leading-tight group-hover:text-primary transition-colors">Toyota Key Fob</h3>
+<div class="flex items-center text-gray-500 text-sm gap-1">
+<span class="material-symbols-outlined text-base">location_on</span>
+<span data-location="South Parking Lot">South Parking Lot A</span>
+</div>
+<div class="pt-2 border-t border-gray-100 dark:border-white/10 flex justify-between items-center">
+<a class="text-primary font-bold text-sm" href="#">View Details</a>
+<span class="material-symbols-outlined text-gray-300 text-lg">bookmark</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- How It Works -->
+<div class="w-full bg-white dark:bg-white/5 py-20 px-6">
+<div class="max-w-[1000px] mx-auto text-center flex flex-col gap-12">
+<div class="flex flex-col gap-3">
+<h2 class="text-3xl font-bold font-display tracking-tight">How it works</h2>
+<p class="text-gray-500 max-w-lg mx-auto">Reuniting students with their belongings in three simple steps.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="flex flex-col items-center gap-4">
+<div class="size-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">edit_note</span>
+</div>
+<h4 class="font-bold text-lg">Report</h4>
+<p class="text-gray-500 text-sm leading-relaxed">Submit a quick report with a photo and the location where the item was lost or found.</p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="size-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">chat_bubble</span>
+</div>
+<h4 class="font-bold text-lg">Connect</h4>
+<p class="text-gray-500 text-sm leading-relaxed">Our system matches reports automatically. Verified owners are connected via secure campus chat.</p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="size-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">handshake</span>
+</div>
+<h4 class="font-bold text-lg">Return</h4>
+<p class="text-gray-500 text-sm leading-relaxed">Meet at a safe, designated campus hand-off zone or security office to return the item.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Section -->
+<div class="w-full max-w-[1100px] px-6 py-20">
+<div class="bg-primary rounded-[2.5rem] p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+<div class="flex flex-col gap-4 relative z-10 text-center md:text-left">
+<h2 class="text-3xl md:text-4xl font-extrabold text-white font-display leading-tight">Ready to help a classmate?</h2>
+<p class="text-white/80 max-w-md">Join over 1,500 students who have successfully returned items this semester.</p>
+</div>
+<button class="bg-white text-primary px-10 py-4 rounded-2xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-xl shadow-black/10 relative z-10 whitespace-nowrap">
+                        Get Started Now
+                    </button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 bg-background-light dark:bg-background-dark border-t border-primary/5">
+<div class="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="size-6 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">search_check</span>
+</div>
+<h2 class="text-md font-bold font-display">Campus Reconnect</h2>
+</div>
+<p class="text-gray-500 text-xs leading-relaxed">
+                        The official student-led lost &amp; found platform. Helping campus stay connected, one item at a time.
+                    </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-sm">Quick Links</h4>
+<div class="flex flex-col gap-2">
+<a class="text-xs text-gray-500 hover:text-primary" href="#">Browse All Items</a>
+<a class="text-xs text-gray-500 hover:text-primary" href="#">Report Lost</a>
+<a class="text-xs text-gray-500 hover:text-primary" href="#">Report Found</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-sm">Campus Safety</h4>
+<div class="flex flex-col gap-2">
+<a class="text-xs text-gray-500 hover:text-primary" href="#">Security Office</a>
+<a class="text-xs text-gray-500 hover:text-primary" href="#">Hand-off Zones</a>
+<a class="text-xs text-gray-500 hover:text-primary" href="#">Privacy Policy</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-sm">Contact Us</h4>
+<p class="text-xs text-gray-500">Student Union, Room 402<br/>Mon-Fri: 9am - 5pm</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-primary">mail</span>
+<span class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-primary">language</span>
+</div>
+</div>
+</div>
+<div class="max-w-[1100px] mx-auto mt-12 pt-8 border-t border-gray-100 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-gray-400 text-[10px] uppercase tracking-widest font-bold">© 2024 Campus Reconnect Hub</p>
+<div class="flex gap-6">
+<a class="text-[10px] text-gray-400 uppercase tracking-widest font-bold hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-[10px] text-gray-400 uppercase tracking-widest font-bold hover:text-primary transition-colors" href="#">Privacy</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Universal Search - Discovery Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#006e7a",
+                        "accent": "#FFB8A5",
+                        "background-light": "#fafafa",
+                        "background-dark": "#19202e",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-effect {
+            background: rgba(25, 32, 46, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .mesh-gradient {
+            background-color: #fafafa;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(0, 110, 122, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(255, 184, 165, 0.1) 0px, transparent 50%);
+        }
+        .dark .mesh-gradient {
+            background-color: #19202e;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(0, 110, 122, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(25, 32, 46, 0.2) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#101818] dark:text-white mesh-gradient min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 px-6 py-4 lg:px-20 border-b border-[#f0f4f5]/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight">Universal Search</h2>
+</div>
+<div class="flex items-center gap-6 lg:gap-10">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">How it works</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Discover</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold transition-transform hover:scale-105 active:scale-95">
+                        Sign in
+                    </button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA78B9ifNr_IuPzaBh12NXZThmarwcUHYNk2NcvG_w8A5FeX9atj5HzyIPrUi_9VQC-0PzeJ7tEfRpjMwnJViItPSUHQg1sDhnUGQ-FngPHnbSY1jjvsPAI8kF-gz3q7OBWC5QthxQFMVg5Rjvr0_39oS2_6iV2Zxx-vyPCGuMkosy1oDh9IyyFSZBo7oAJHoC-iDZU8YmOI_47ZlOwcUw4Rbw_QLZCRo2JjQtFTi6M_0Nydf8ZwflGcBs92jU4Lzd9a5D2CTrxObeT");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-20 px-6 lg:px-40">
+<div class="max-w-[960px] mx-auto flex flex-col items-center">
+<!-- Headline -->
+<div class="text-center mb-10">
+<span class="inline-block px-3 py-1 mb-4 text-[10px] font-bold tracking-widest uppercase rounded-full bg-accent/20 text-[#d4816a] dark:text-accent">
+                    Limitless Exploration
+                </span>
+<h1 class="text-[#101818] dark:text-white tracking-tight text-4xl lg:text-6xl font-bold leading-tight mb-4">
+                    What are you looking for today?
+                </h1>
+<p class="text-[#5e888d] dark:text-gray-400 text-lg max-w-2xl mx-auto">
+                    Search through millions of products, places, and ideas in a single unified interface.
+                </p>
+</div>
+<!-- Search Section -->
+<div class="w-full mb-12 relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative flex flex-col glass-effect p-2 rounded-2xl shadow-2xl">
+<div class="flex items-center w-full h-16 px-6">
+<span class="material-symbols-outlined text-primary mr-4 text-3xl">search</span>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-xl font-normal placeholder:text-[#5e888d]/60 text-[#101818] dark:text-white" placeholder="Search for anything..."/>
+<div class="hidden sm:flex items-center gap-2">
+<span class="text-xs font-mono bg-[#f0f4f5] dark:bg-white/10 px-2 py-1 rounded border border-black/5 text-gray-500 uppercase">⌘ K</span>
+<button class="bg-primary hover:bg-[#005a63] text-white px-6 py-2 rounded-lg font-bold transition-all shadow-lg shadow-primary/20">
+                                Search
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Category Grid -->
+<div class="w-full max-w-[800px]">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+<!-- Category: Places -->
+<div class="group flex flex-col gap-4 rounded-xl border border-[#dae5e7] dark:border-white/10 bg-white dark:bg-white/5 p-6 items-center text-center cursor-pointer transition-all hover:shadow-xl hover:-translate-y-1 hover:border-primary/50">
+<div class="size-14 rounded-full bg-primary/10 text-primary flex items-center justify-center transition-colors group-hover:bg-primary group-hover:text-white">
+<span class="material-symbols-outlined text-3xl">map</span>
+</div>
+<div>
+<h2 class="text-[#101818] dark:text-white text-base font-bold leading-tight">Places</h2>
+<p class="text-xs text-gray-400 mt-1">Discover new spots</p>
+</div>
+</div>
+<!-- Category: Products -->
+<div class="group flex flex-col gap-4 rounded-xl border border-[#dae5e7] dark:border-white/10 bg-white dark:bg-white/5 p-6 items-center text-center cursor-pointer transition-all hover:shadow-xl hover:-translate-y-1 hover:border-primary/50">
+<div class="size-14 rounded-full bg-primary/10 text-primary flex items-center justify-center transition-colors group-hover:bg-primary group-hover:text-white relative">
+<span class="material-symbols-outlined text-3xl">shopping_bag</span>
+<span class="absolute top-0 right-0 size-3 bg-accent rounded-full border-2 border-white dark:border-background-dark"></span>
+</div>
+<div>
+<h2 class="text-[#101818] dark:text-white text-base font-bold leading-tight">Products</h2>
+<p class="text-xs text-gray-400 mt-1">Trending gear</p>
+</div>
+</div>
+<!-- Category: Ideas -->
+<div class="group flex flex-col gap-4 rounded-xl border border-[#dae5e7] dark:border-white/10 bg-white dark:bg-white/5 p-6 items-center text-center cursor-pointer transition-all hover:shadow-xl hover:-translate-y-1 hover:border-primary/50">
+<div class="size-14 rounded-full bg-primary/10 text-primary flex items-center justify-center transition-colors group-hover:bg-primary group-hover:text-white">
+<span class="material-symbols-outlined text-3xl">lightbulb</span>
+</div>
+<div>
+<h2 class="text-[#101818] dark:text-white text-base font-bold leading-tight">Ideas</h2>
+<p class="text-xs text-gray-400 mt-1">Daily inspiration</p>
+</div>
+</div>
+<!-- Category: People -->
+<div class="group flex flex-col gap-4 rounded-xl border border-[#dae5e7] dark:border-white/10 bg-white dark:bg-white/5 p-6 items-center text-center cursor-pointer transition-all hover:shadow-xl hover:-translate-y-1 hover:border-primary/50">
+<div class="size-14 rounded-full bg-primary/10 text-primary flex items-center justify-center transition-colors group-hover:bg-primary group-hover:text-white">
+<span class="material-symbols-outlined text-3xl">group</span>
+</div>
+<div>
+<h2 class="text-[#101818] dark:text-white text-base font-bold leading-tight">People</h2>
+<p class="text-xs text-gray-400 mt-1">Connect &amp; share</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Content Section Header -->
+<div class="w-full mt-16 px-4 flex items-center justify-between">
+<h2 class="text-[#101818] dark:text-white text-2xl font-bold leading-tight tracking-tight">Trending Discoveries</h2>
+<a class="text-primary text-sm font-bold flex items-center gap-1 hover:underline" href="#">
+                    View all <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Dynamic Discovery Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-6 px-4">
+<div class="group overflow-hidden rounded-2xl bg-white dark:bg-white/5 border border-[#dae5e7] dark:border-white/10 shadow-sm transition-all hover:shadow-md">
+<div class="h-48 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Futuristic architectural building in nature" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAcgAa403SA3IoP0dkizd53CZnJ3A7Sy7WqBOYmmfNsQbCV-11_B0BHJbO7E3xNpSBhaBJtyG7eaKpx07KhBJWJkeEBKjw-x-yS2B774F9vEYeqh6eHQNlYaZ3KZpJtxB83X_fXmeCQ5ZLeD2Kl-Uon4qJd4bpOveZT_jGX0LG0wHsty1guojjRCmornp1zmqLZLoArLtnPr6rgc-FmK7MAWwIdHTZrPe1ndhcJot3FS31QNhZ7v5Ya0CgvqoH7UyNesp3bb-DFM9As');"></div>
+<div class="p-5">
+<p class="text-xs font-bold text-primary mb-2 uppercase tracking-wide">Places</p>
+<h3 class="font-bold text-lg mb-2">The Glass Pavillion</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">A modernist masterpiece hidden in the heart of the Redwood forests.</p>
+</div>
+</div>
+<div class="group overflow-hidden rounded-2xl bg-white dark:bg-white/5 border border-[#dae5e7] dark:border-white/10 shadow-sm transition-all hover:shadow-md">
+<div class="h-48 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Minimalist desk setup with high-end tools" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3J4Z_oOw0tDT2ojA2YyR20o_mLidBSym8xIoxLMFlpynEFly0rle7Kkx_BDtDzdbRPxuP1qj31TUS9zBvs5p9QEt6KhQPB4K9YBvDIM24QVSB7f4yY5ksyaOkNxvv9OKy2rTyhBe--V4C7isrTGX18ngbMuE7kdeLiW9W8PA1rZOe6Iq0sEVT8itA9cRgCSN-BIxbmkIqINVDAYu9Iucyg_LftBueI0oW4xKYuruUX6b0RBSQZaepkDLiYXuW3RWktw8zJIwH_qRT');"></div>
+<div class="p-5">
+<p class="text-xs font-bold text-primary mb-2 uppercase tracking-wide">Products</p>
+<h3 class="font-bold text-lg mb-2">Monolith Keyboard</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Precision-engineered aluminum mechanical keyboard for deep focus.</p>
+</div>
+</div>
+<div class="group overflow-hidden rounded-2xl bg-white dark:bg-white/5 border border-[#dae5e7] dark:border-white/10 shadow-sm transition-all hover:shadow-md">
+<div class="h-48 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Abstract vibrant geometric shapes swirling" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBG7JbMH1zL9mH4F_J1HETHHivE-TYMtc4GKexnQFL3cJgezjYZlr254mBN67sa2GTNJagsPzjxGGdvFe_ME8_y5oj0djCWCo40UHS5ygpkZHBIBP8EUbdqimpKcyv3Z9W1V1oMMbOTe-upZvBL3WLqTGvZNsQoe5jAG8p_dU6jOWKT1el3yXZ2YN1Y57N6xJq9WTlPSrsqcqFOgU8f_66wIjEXLpRyspfKkhor9-6r1gsPoYD8kLRtpC_SIGKXrVoCU9Olo9HA8sdl');"></div>
+<div class="p-5">
+<p class="text-xs font-bold text-primary mb-2 uppercase tracking-wide">Ideas</p>
+<h3 class="font-bold text-lg mb-2">The 2024 Design Shift</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">How generative algorithms are reshaping the way we think about aesthetics.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-20 border-t border-[#dae5e7] dark:border-white/10 py-10">
+<div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 opacity-60">
+<div class="size-5">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-sm font-bold">Universal Search</span>
+</div>
+<div class="flex gap-8">
+<a class="text-sm text-gray-500 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-sm text-gray-500 hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-sm text-gray-500 hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+<div class="text-sm text-gray-400">
+                © 2024 Discover Corp.
+            </div>
+</div>
+</footer>
+</body></html>

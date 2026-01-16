@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lost and Found Home Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1b8d98",
+                        "accent-warm": "#E0B64D",
+                        "accent-coral": "#ED6A5E",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#121f20",
+                        "paper": "#f9f7f6",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .scrapbook-tape {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transform: rotate(-3deg);
+        }
+        .blob-bg {
+            position: absolute;
+            z-index: -1;
+            filter: blur(40px);
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0f191a] transition-colors duration-300">
+<!-- Floating Background Elements -->
+<div class="fixed inset-0 pointer-events-none overflow-hidden">
+<div class="blob-bg bg-primary w-96 h-96 -top-20 -left-20 rounded-full"></div>
+<div class="blob-bg bg-accent-warm w-80 h-80 top-1/2 -right-20 rounded-full"></div>
+<div class="blob-bg bg-accent-coral w-64 h-64 bottom-10 left-1/3 rounded-full"></div>
+</div>
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- TopNavBar -->
+<div class="px-4 md:px-20 lg:px-40 flex justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap px-4 py-3 bg-white/70 dark:bg-background-dark/70 backdrop-blur-md rounded-full border border-white/50 dark:border-white/10 shadow-sm">
+<div class="flex items-center gap-3 text-[#0f191a] dark:text-white px-4">
+<div class="bg-primary text-white p-2 rounded-lg rotate-[-5deg]">
+<span class="material-symbols-outlined !text-2xl">extension</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">LostFound</h2>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-[#0f191a] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Search</a>
+<a class="text-[#0f191a] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Report Found</a>
+<a class="text-[#0f191a] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Report Lost</a>
+<a class="text-[#0f191a] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">How it Works</a>
+</nav>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-full h-10 px-6 bg-primary text-white text-sm font-bold shadow-lg hover:shadow-primary/30 transition-all">
+<span>Log In</span>
+</button>
+</div>
+</header>
+</div>
+</div>
+<!-- HeroSection -->
+<main class="px-4 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<div class="relative py-12 px-4 @container">
+<!-- Decorative doodles/icons -->
+<div class="absolute top-0 right-10 opacity-20 pointer-events-none hidden lg:block rotate-12">
+<span class="material-symbols-outlined !text-[120px]">toys</span>
+</div>
+<div class="absolute bottom-10 left-0 opacity-20 pointer-events-none hidden lg:block -rotate-12">
+<span class="material-symbols-outlined !text-[100px]">vpn_key</span>
+</div>
+<div class="flex flex-col gap-10 items-center justify-center text-center">
+<div class="flex flex-col gap-4 max-w-2xl">
+<h1 class="text-[#0f191a] dark:text-white text-5xl font-black leading-[1.1] tracking-tight md:text-7xl">
+                                    Find what's <span class="text-primary underline decoration-accent-warm decoration-wavy underline-offset-8">lost</span>, share what's found.
+                                </h1>
+<p class="text-gray-600 dark:text-gray-400 text-lg md:text-xl font-medium">
+                                    A vibrant, community-focused space to reunite people with their precious belongings.
+                                </p>
+</div>
+<!-- Collage Search Bar -->
+<div class="w-full max-w-2xl relative">
+<div class="absolute -top-4 -right-4 bg-accent-warm text-white px-3 py-1 rounded-md rotate-6 text-xs font-bold shadow-sm z-10">
+                                    HELPFUL COMMUNITY
+                                </div>
+<div class="flex w-full items-stretch rounded-2xl h-16 md:h-20 shadow-2xl bg-white dark:bg-gray-800 p-2 border-4 border-white dark:border-gray-700">
+<div class="flex items-center justify-center pl-6 text-gray-400">
+<span class="material-symbols-outlined !text-3xl">search</span>
+</div>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-lg md:text-xl placeholder:text-gray-300 dark:text-white" placeholder="I lost my yellow plush toy..."/>
+<button class="bg-primary hover:bg-primary/90 text-white rounded-xl px-8 md:px-12 text-lg font-bold transition-all flex items-center gap-2">
+                                        Search
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Quick Links -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 py-8">
+<div class="group relative bg-accent-coral/10 dark:bg-accent-coral/20 p-8 rounded-3xl border-2 border-dashed border-accent-coral/30 cursor-pointer overflow-hidden transition-all hover:scale-[1.02]">
+<div class="relative z-10 flex items-center justify-between">
+<div>
+<h3 class="text-2xl font-black text-accent-coral">Report Lost</h3>
+<p class="text-gray-700 dark:text-gray-300 font-medium">Missing something? Let us help you find it.</p>
+</div>
+<span class="material-symbols-outlined !text-5xl text-accent-coral">sentiment_dissatisfied</span>
+</div>
+<div class="absolute -bottom-4 -right-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined !text-[150px]">emergency_home</span>
+</div>
+</div>
+<div class="group relative bg-accent-warm/10 dark:bg-accent-warm/20 p-8 rounded-3xl border-2 border-dashed border-accent-warm/30 cursor-pointer overflow-hidden transition-all hover:scale-[1.02]">
+<div class="relative z-10 flex items-center justify-between">
+<div>
+<h3 class="text-2xl font-black text-accent-warm">Report Found</h3>
+<p class="text-gray-700 dark:text-gray-300 font-medium">Found an item? Be someone's hero today.</p>
+</div>
+<span class="material-symbols-outlined !text-5xl text-accent-warm">volunteer_activism</span>
+</div>
+<div class="absolute -bottom-4 -right-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined !text-[150px]">handshake</span>
+</div>
+</div>
+</div>
+<!-- Recently Reunited Section -->
+<div class="mt-12">
+<div class="flex items-end justify-between px-4 pb-6">
+<div>
+<h2 class="text-[#0f191a] dark:text-white text-3xl font-black leading-tight tracking-tight">Recently Reunited</h2>
+<p class="text-primary font-bold">Bringing joy back, one item at a time.</p>
+</div>
+<button class="text-sm font-bold bg-white dark:bg-gray-800 px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all">View All Stories</button>
+</div>
+<div class="flex overflow-x-auto pb-8 gap-8 px-4 [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+<!-- Story Card 1 -->
+<div class="flex-shrink-0 w-72 group">
+<div class="bg-white dark:bg-gray-800 p-3 rounded-lg shadow-xl rotate-[-2deg] transition-transform hover:rotate-0 hover:scale-105">
+<div class="relative">
+<div class="scrapbook-tape absolute -top-4 left-1/2 -translate-x-1/2 w-20 h-6 z-10"></div>
+<div class="aspect-[4/5] rounded-lg bg-cover bg-center mb-4" data-alt="A happy golden retriever reunited with its family" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCnzU35asm4QAFyht3-4W7Tc-xPdWVHuwy5mwqqI13UINS-b6H3hqoah6o-SwgjN0_RdMYJ6aqoUyXXBp541j3Y2hjjfm2yF8g0A6PcPjOmQcXX6Ivrgk6R1kkVfAll3KRWxnd-oeGsBxj16kUn6BwYmsal1EYAtpMbmR9Q3ONE64_zYEynTCheniFVsDQp3TGMJQAJI0zMUJsNfdQ2LeK9IWDzuw9971LGN7ql6tcoslWz2C22Pzr_G_ZKefZRBjWWUKYMngzMcUU");'></div>
+</div>
+<div class="px-2 pb-2">
+<h4 class="font-bold text-lg dark:text-white">Buddy is Home!</h4>
+<p class="text-sm text-gray-500 italic">"Reunited after 3 days in the park thanks to Sarah!"</p>
+<div class="mt-3 flex items-center gap-2">
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold">DOG</span>
+<span class="text-[10px] text-gray-400 font-medium uppercase tracking-tighter">Brooklyn, NY</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Story Card 2 -->
+<div class="flex-shrink-0 w-72 group mt-4">
+<div class="bg-white dark:bg-gray-800 p-3 rounded-lg shadow-xl rotate-[3deg] transition-transform hover:rotate-0 hover:scale-105">
+<div class="relative">
+<div class="scrapbook-tape absolute -top-4 left-1/2 -translate-x-1/2 w-20 h-6 z-10 opacity-60"></div>
+<div class="aspect-[4/5] rounded-lg bg-cover bg-center mb-4" data-alt="Professional camera equipment found at a national park" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJtdc6r7bJQ5QHg1CmAzXYeVDD996r9e9zZqQsFdDfto5HSKnwxsjY64SNWGOS4VKqOjs88be-ZEXYakQw5cO2qj6O4s3v1EErRXyGmbf8RT-ISeaP5kCw0YkF_qZ1xCfoVOhBWeM5V6sZSTt2NMHPxnk_lHj1Ge8lKFiubT2-E2ounyi95w4B4bdyEE8qwfi7WE3RPzpjFEjt1TXV8eGLpNMBtFwJBqup66DPDAaS7MR-3kuaTPh6hZG_Q8gOaDWt69Th44WRJLQ");'></div>
+</div>
+<div class="px-2 pb-2">
+<h4 class="font-bold text-lg dark:text-white">Camera Returned</h4>
+<p class="text-sm text-gray-500 italic">"Sentimental vacation photos saved. Thank you LostFound!"</p>
+<div class="mt-3 flex items-center gap-2">
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold">TECH</span>
+<span class="text-[10px] text-gray-400 font-medium uppercase tracking-tighter">Seattle, WA</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Story Card 3 -->
+<div class="flex-shrink-0 w-72 group">
+<div class="bg-white dark:bg-gray-800 p-3 rounded-lg shadow-xl rotate-[-1deg] transition-transform hover:rotate-0 hover:scale-105">
+<div class="relative">
+<div class="scrapbook-tape absolute -top-4 left-1/2 -translate-x-1/2 w-20 h-6 z-10 opacity-80"></div>
+<div class="aspect-[4/5] rounded-lg bg-cover bg-center mb-4" data-alt="A vintage leather wallet" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKPreNkDtQpdmHvv2jpPSF3EO9ORrszMdrWzTVV8rktVwp7DtaWwtwDv_wFAHXSg8EW7NaJvUmLGdAhVx7jnoNRXGqqSeirHjHM7Keto1dZAttaN_MDrGcUPlgzhZzqgWZqhDT03lWZTqdYp2qEYCxaOBOmE3iLWY5MS45vvh1JKRwj4PNupnERQev3S30vJVNduq4wLgttWaggGM3HjUByom3zDnQXT_Y9_sbqD2hOSq9pAg28G1FLKIlp3zkFeSB2EtZT2tgKeI");'></div>
+</div>
+<div class="px-2 pb-2">
+<h4 class="font-bold text-lg dark:text-white">Wallet Safe</h4>
+<p class="text-sm text-gray-500 italic">"Lost on the subway, returned with everything inside."</p>
+<div class="mt-3 flex items-center gap-2">
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold">PERSONAL</span>
+<span class="text-[10px] text-gray-400 font-medium uppercase tracking-tighter">Chicago, IL</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Story Card 4 -->
+<div class="flex-shrink-0 w-72 group mt-6">
+<div class="bg-white dark:bg-gray-800 p-3 rounded-lg shadow-xl rotate-[2deg] transition-transform hover:rotate-0 hover:scale-105">
+<div class="relative">
+<div class="scrapbook-tape absolute -top-4 left-1/2 -translate-x-1/2 w-20 h-6 z-10"></div>
+<div class="aspect-[4/5] rounded-lg bg-cover bg-center mb-4" data-alt="A small stuffed teddy bear" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAb9xEbuO-lIl3x4l5L8J08vbfgRevBgeGqZwIZmDJdtClPY4yqgs0vswwij9kbYA3Uh3Q5v2DdGT9lGIc2AR5KURmQU6YJN8tH82ozndbPc5xYxL86U9shelv_mKBZTMPcQP2e2RssGUSkzpAI8xvGmmLGUJf-KiXGkbqGFsWqMXYC4qqxA6nQvN_74e2KMGxpzp6E1C46bZjR6-YDJMD_luHJS0hDVQWq9G0rhFw5qtWzG2qwVDJWKF1hjPUIgQZPr7c-OT7j7Bg");'></div>
+</div>
+<div class="px-2 pb-2">
+<h4 class="font-bold text-lg dark:text-white">Ted is Back</h4>
+<p class="text-sm text-gray-500 italic">"My daughter can finally sleep again. Community win!"</p>
+<div class="mt-3 flex items-center gap-2">
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold">TOY</span>
+<span class="text-[10px] text-gray-400 font-medium uppercase tracking-tighter">Austin, TX</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Most Wanted Bulletin Board -->
+<div class="mt-20 mb-20 px-4">
+<div class="bg-[#e9ecef] dark:bg-gray-800/50 p-8 md:p-12 rounded-[2.5rem] border-8 border-white dark:border-gray-700 shadow-inner relative overflow-hidden">
+<!-- Background texture for corkboard feel -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="relative z-10">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+<div class="flex items-center gap-3">
+<div class="bg-accent-coral text-white p-2 rounded-full">
+<span class="material-symbols-outlined">push_pin</span>
+</div>
+<h2 class="text-3xl font-black dark:text-white">Most Wanted</h2>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-white/80 dark:bg-gray-700 rounded-lg text-sm font-bold shadow-sm">All Items</button>
+<button class="px-4 py-2 bg-white/40 dark:bg-gray-800 rounded-lg text-sm font-bold">Pets</button>
+<button class="px-4 py-2 bg-white/40 dark:bg-gray-800 rounded-lg text-sm font-bold">Keys</button>
+<button class="px-4 py-2 bg-white/40 dark:bg-gray-800 rounded-lg text-sm font-bold">Bags</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Wanted Card 1 -->
+<div class="bg-paper dark:bg-gray-700 p-6 rounded-sm shadow-md relative group hover:shadow-xl transition-shadow border-t-[12px] border-accent-coral/20">
+<div class="flex justify-between mb-4">
+<span class="text-[10px] font-black uppercase tracking-widest text-accent-coral">Reward: $100</span>
+<span class="text-[10px] font-bold text-gray-400">LOST 2H AGO</span>
+</div>
+<h3 class="text-xl font-black mb-1 dark:text-white">Vintage Rolex</h3>
+<p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">Lost near Grand Central station. High sentimental value, heirloom piece.</p>
+<div class="aspect-video bg-gray-200 dark:bg-gray-600 rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A vintage luxury watch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtBwhQU4J-z7vT1D397KdyPSgL7K1NMcb-xGsfVGk7SaVRh_gbQVwlfo1POKE8Obuf7GzOLZddG4kzHE2JeyPnf8ZWsn-9PVcUIPQijxVZao5tyZfocC_3sP_VBns2NNvZGHXh47cL2rKYStYO59gwr0b8lOf6cbCVf4njUvpG1G7yeS1yCaewDqhlBHSTrnxKaGRfBNiDw_uEWUGjDqx6ZI4vhIKmcGteY8rBk0l5RRnKilxQRDT5KrMx-y4neOscvnDKZ3w9fTU"/>
+</div>
+<button class="w-full py-3 border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary hover:text-white transition-all">Found it?</button>
+</div>
+<!-- Wanted Card 2 -->
+<div class="bg-paper dark:bg-gray-700 p-6 rounded-sm shadow-md relative group hover:shadow-xl transition-shadow border-t-[12px] border-primary/20 scale-105 z-10">
+<div class="flex justify-between mb-4">
+<span class="text-[10px] font-black uppercase tracking-widest text-primary">Reward: Hugs &amp; Love</span>
+<span class="text-[10px] font-bold text-gray-400">LOST 1D AGO</span>
+</div>
+<h3 class="text-xl font-black mb-1 dark:text-white">Mittens the Cat</h3>
+<p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">Grey tabby with white paws. Very shy, might be hiding in gardens.</p>
+<div class="aspect-video bg-gray-200 dark:bg-gray-600 rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A grey tabby cat with white paws" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8Q1PCySparOoW6KZx8M0vCoj7_T71MpB-KhyMyGvHPkliA7inDzlX05BrWabzexvWeUk38CvObA_KUbqiAcxrhBPP044kK0U0G5RXrbQYNqSEeV-DDOU9Y3SVldLAb1VxpoY8UioiJ-NIHDZn1UpyDPTB-GVzPOxJNWOqwK5PvxtUaHl1kJLW94i1ILKzWekPKM4xNCcXXlsvXyrERZwZsXXJ-AHtU6z-LPNwV3owjxhmElK5yD-6IvvODinUTopMwpr5NxniCbs"/>
+</div>
+<button class="w-full py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">I've seen Mittens!</button>
+</div>
+<!-- Wanted Card 3 -->
+<div class="bg-paper dark:bg-gray-700 p-6 rounded-sm shadow-md relative group hover:shadow-xl transition-shadow border-t-[12px] border-accent-warm/20">
+<div class="flex justify-between mb-4">
+<span class="text-[10px] font-black uppercase tracking-widest text-accent-warm">Reward: Coffee</span>
+<span class="text-[10px] font-bold text-gray-400">LOST 5H AGO</span>
+</div>
+<h3 class="text-xl font-black mb-1 dark:text-white">Blue Backpack</h3>
+<p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">Contains a MacBook Pro and student ID. Left on bus line 42.</p>
+<div class="aspect-video bg-gray-200 dark:bg-gray-600 rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A blue commuter backpack" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFX4Mo48K9vXZJoXcScB717YeaLoGOEU-Bl8oPjxvChgPM5NfCdfFTRL5WX1jxl_daxSq7HYovlBFTyNGfTXqzQPGiMSO3A87vRTvZhbeFsRvrk1TNBJO9HPt3-JR-7egMXl9CtAkiT057qdNJflnkwIbuvUyuieFlFHw_k4iPbm_4viHWmYwe9vlCH0ENX6qfeMFJevQThch30ynsVBYSPK3KZdReoIWREsAZkVm_7omsicwbGyU6lOHFbkgoryAEW9SB9cwZs3c"/>
+</div>
+<button class="w-full py-3 border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary hover:text-white transition-all">Found it?</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="mt-auto border-t border-gray-100 dark:border-gray-800 py-12 px-4">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-3 text-primary mb-6">
+<span class="material-symbols-outlined !text-3xl">extension</span>
+<h2 class="text-xl font-bold">LostFound</h2>
+</div>
+<p class="text-gray-500 dark:text-gray-400 max-w-sm font-medium">
+                                    We believe that every lost item has a home. Our mission is to make the world a little smaller and a lot kinder through simple acts of returning what's found.
+                                </p>
+</div>
+<div>
+<h4 class="font-bold mb-4 dark:text-white">Quick Links</h4>
+<ul class="space-y-2 text-gray-500 dark:text-gray-400 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Safety Tips</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Success Stories</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Community Rules</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Support</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 dark:text-white">Connect</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined !text-xl">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined !text-xl">mail</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined !text-xl">group</span>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400 font-bold uppercase tracking-widest">
+<p>© 2024 LostFound Community. Made with hope.</p>
+<div class="flex gap-8">
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+<a href="#">Cookies</a>
+</div>
+</div>
+</footer>
+</div>
+</main>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Character Moments Gallery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#19c3e6",
+              "background-light": "#f1eeea",
+              "background-dark": "#1b2c32",
+              "sandy": "#F5EFE1",
+              "coral": "#F07C64",
+              "ocean": "#33D0D0",
+              "deep-brown": "#423B33",
+            },
+            fontFamily: {
+              "display": ["Spline Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .sandy-texture {
+            background-color: #f1eeea;
+            background-image: radial-gradient(#dcd7d0 0.5px, transparent 0.5px);
+            background-size: 4px 4px;
+        }
+        .dark .sandy-texture {
+            background-color: #1b2c32;
+            background-image: radial-gradient(#243b43 0.5px, transparent 0.5px);
+        }
+        .mask-coconut {
+            clip-path: ellipse(45% 50% at 50% 50%);
+        }
+        .mask-pod {
+            clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
+        }
+        .mask-surfboard {
+            clip-path: ellipse(35% 50% at 50% 50%);
+        }
+        .mask-flower {
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-deep-brown dark:text-white sandy-texture min-h-screen">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="size-12 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight flex-1 text-center">Character Moments</h2>
+<div class="size-12 flex items-center justify-center">
+<button class="size-10 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+<!-- Character Filter Carousel -->
+<div class="flex gap-3 px-4 py-4 overflow-x-auto no-scrollbar">
+<div class="flex h-11 shrink-0 items-center justify-center gap-x-2 rounded-full bg-ocean text-white px-4 shadow-sm">
+<span class="material-symbols-outlined text-xl">pets</span>
+<p class="text-sm font-bold">Stitch</p>
+</div>
+<div class="flex h-11 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 px-4 shadow-sm">
+<span class="material-symbols-outlined text-xl text-coral">photo_camera</span>
+<p class="text-sm font-medium">Lilo</p>
+</div>
+<div class="flex h-11 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 px-4 shadow-sm">
+<span class="material-symbols-outlined text-xl text-blue-400">surfing</span>
+<p class="text-sm font-medium">Nani</p>
+</div>
+<div class="flex h-11 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 px-4 shadow-sm">
+<span class="material-symbols-outlined text-xl text-purple-400">biotech</span>
+<p class="text-sm font-medium">Jumba</p>
+</div>
+</div>
+</div>
+<!-- Organic Grid Gallery -->
+<main class="p-4 mb-24">
+<div class="grid grid-cols-2 gap-6">
+<!-- Row 1 -->
+<div class="flex flex-col gap-2">
+<div class="mask-coconut aspect-square bg-cover bg-center shadow-inner overflow-hidden relative group" data-alt="Stitch eating a coconut on the beach" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKbq7MfOfy03jmOlPcxJUPTuXDcimKIAYcrApCFF8pH_SnMIFuOtJyAl7YEhtoC07Kue_8wDyfOXoa9q3Kvh7JmbGNJEiUfnFBQz2FV_96Rzyh5vdoUyP8GchGjGEXzubpUadILdQWr7GCuYlCplkCCZMCc4isupfPEov3hpHQQEv5T0DzG457Mwa-pLKATaN-u5mNUaJs4nhMOJphxKMdOfS10tMhqdH_upeReDlPFOUvQ1qfs5dknkwDdMbW8dkmR0sJPzrvjY0");'>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+<div class="absolute bottom-4 left-0 right-0 text-center">
+<span class="text-white text-xs font-bold uppercase tracking-widest">Coconut Snack</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 pt-8">
+<div class="mask-pod aspect-[4/5] bg-cover bg-center shadow-lg overflow-hidden relative" data-alt="Futuristic spaceship interior with blue lights" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRanN5xzTK-Ohjn5TlSial44Md-BXSFISZ-zmvjvxXXp-uPsoPX0CvUzcT3ay5UqTPkxt4Kfkmv4Ij4CeM97eY65IL_gij18QjKWOPNt2PrjVFXM-EGSjQYjRS5eCd0euCGQjtoiR73L7tEKqcm12pxc2Nphfk7gBq8BAYVr06stcebrMvQU8m98_Gug4sGJtejUTBnoO5Qrnuys7YvNWhBG9wlg8ZOXEgAxratd-jchjH7EUs844-jxBfS0LBrM2b-q2-tVjGROM");'>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+<p class="absolute bottom-6 left-4 right-4 text-white text-sm font-bold leading-tight">Escape Velocity</p>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="col-span-2 flex flex-col items-center">
+<div class="mask-surfboard w-4/5 aspect-[16/9] bg-cover bg-center shadow-xl overflow-hidden relative" data-alt="Lilo and Nani surfing on a big blue wave" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHaFBJpv9djb6_ZrPA1XSbxa-PVnW5W9gpHzd44qMNE25eARAHJ3g4canlZr823wTXKkgGTHEpgXl914JM5S_ib1FKzWo6hWCwLM58-ChX0RsDkD-sk8UoNXCbUJVUvTrPNmvNmTTfLdcoR-HnXOdJwNmveL-49FoGkO3_y9IKp8Vx2NfDT7JrvEK--iZG2POhCAk0RkOusEXlA-Hus7gUDurL0RXG96AfGcELOL-MVCqlnOouJy-HV0_jqSYlbE6Yge8jy7aFlxw");'>
+<div class="absolute inset-0 bg-black/10"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full border border-white/30">
+<p class="text-white text-xs font-bold uppercase tracking-tighter">Ohana Means Family</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="flex flex-col gap-2 pt-4">
+<div class="mask-flower aspect-square bg-cover bg-center shadow-md overflow-hidden relative" data-alt="Close up of a tropical pink hibiscus flower" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAA-Hlm5MSk6UYqsHikgBvPkS0RsgNhXXx7Uzv5mIGWP4uKCIhd_0TeUP5Yz_imAXdrARvQ1cndJf3z6yx83Vro0cKuaRF4gAnpJf7dv-a_hiADp28T9DS3C-eMVthy3G4eP4wELcpJrQ3GOzGDe2LDluB7rfqFRRnAqu3ZkdKCLkgJOwUL_fuJm_VarPdCr5s8ps4nhAC3CbZGPhCGXgo23EP0oTeFEdV97616LKHGr8x6rOYoBICjOCsZoSm8GaqZfo6HCZmJdLY");'>
+<div class="absolute inset-0 bg-coral/20"></div>
+</div>
+<p class="text-center text-sm font-semibold opacity-70">Hula Rhythms</p>
+</div>
+<div class="flex flex-col gap-2">
+<div class="rounded-3xl aspect-[3/4] bg-cover bg-center overflow-hidden relative shadow-lg" data-alt="A vintage record player spinning an Elvis record" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC-U-XQKD-4hY29k8Qs0IDqhsa4Sx7CYKT4hLka4wo4IXXhn3jkBffEZHj5zlwquGSQNu_vK7QWPRc634NxtRaOkHSZ8hRbfSzNR2ZS3TShTJx2KCuHjD0Kk65yXNsMehWH54UzMKHjCmunUgh-C2VPDiH8_pMG1V4WKwk1S3tIMFcbd5n5-ZCYxqTQMVvkB1GkQ1aksQKwQD-wb1AsFfXmK0Z99L8SqZY1QkcJF5DumEWvTkN1IomYwK4MDbC_ObtDo2eJWXRPS5c");'>
+<div class="absolute inset-0 bg-black/30"></div>
+<div class="absolute top-4 right-4">
+<span class="material-symbols-outlined text-white fill-1">heart_plus</span>
+</div>
+<p class="absolute bottom-4 left-4 text-white text-base font-bold">Hound Dog Jams</p>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="col-span-2">
+<div class="bg-white/50 dark:bg-slate-800/50 p-6 rounded-3xl border-2 border-dashed border-primary/30 flex flex-col items-center text-center">
+<div class="size-16 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-3xl text-primary">add_a_photo</span>
+</div>
+<h3 class="font-bold text-lg">New Memory?</h3>
+<p class="text-sm opacity-60 px-8">Capture a new moment to add to the Galactic Federation archives.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB -->
+<div class="fixed bottom-24 right-6 z-40">
+<button class="size-16 flex items-center justify-center rounded-2xl bg-coral text-white shadow-lg shadow-coral/40">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-t border-gray-200 dark:border-slate-800 px-6 pb-8 pt-3">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-2xl fill-1">grid_view</span>
+<p class="text-[10px] font-bold uppercase tracking-tighter">Moments</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-400" href="#">
+<span class="material-symbols-outlined text-2xl">favorite</span>
+<p class="text-[10px] font-bold uppercase tracking-tighter">Loved</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-400" href="#">
+<span class="material-symbols-outlined text-2xl">folder_shared</span>
+<p class="text-[10px] font-bold uppercase tracking-tighter">Albums</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-400" href="#">
+<span class="material-symbols-outlined text-2xl">settings_account_box</span>
+<p class="text-[10px] font-bold uppercase tracking-tighter">Profile</p>
+</a>
+</div>
+</div>
+</body></html>

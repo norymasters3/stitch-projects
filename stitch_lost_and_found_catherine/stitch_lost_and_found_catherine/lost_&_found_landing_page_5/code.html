@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LostFound Ops - Terminal Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#22a8c3",
+                        "accent": "#0e7490",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0f172a",
+                        "panel": "#ffffff",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body { @apply bg-background-light text-slate-900 font-sans antialiased; }
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .sidebar-fixed { width: 320px; }
+        .main-content { margin-left: 320px; }
+    </style>
+</head>
+<body class="bg-slate-50">
+<header class="fixed top-0 left-0 right-0 h-16 bg-white border-b border-slate-200 z-50 flex items-center justify-between px-6">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<div class="bg-primary p-1.5 rounded text-white shrink-0">
+<svg class="size-5" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h1 class="text-lg font-extrabold tracking-tight text-slate-800">LostFound <span class="font-normal text-slate-400">| OPS TERMINAL</span></h1>
+</div>
+<div class="hidden md:flex items-center gap-1 bg-slate-100 p-1 rounded-lg">
+<button class="px-3 py-1.5 text-xs font-semibold bg-white shadow-sm rounded text-slate-800">Dashboard</button>
+<button class="px-3 py-1.5 text-xs font-semibold text-slate-500 hover:text-slate-800">Claims Queue</button>
+<button class="px-3 py-1.5 text-xs font-semibold text-slate-500 hover:text-slate-800">Inventory</button>
+<button class="px-3 py-1.5 text-xs font-semibold text-slate-500 hover:text-slate-800">Analytics</button>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex flex-col text-right">
+<span class="text-xs font-bold text-slate-900">John Doe (Supervisor)</span>
+<span class="text-[10px] text-slate-500 font-medium">Terminal 4 - Int'l Airport</span>
+</div>
+<div class="size-10 bg-slate-200 rounded-full flex items-center justify-center overflow-hidden border border-slate-300">
+<span class="material-symbols-outlined text-slate-500">account_circle</span>
+</div>
+</div>
+</header>
+<div class="pt-16 flex min-h-screen">
+<aside class="sidebar-fixed fixed top-16 bottom-0 left-0 bg-white border-r border-slate-200 p-5 overflow-y-auto custom-scrollbar z-40">
+<div class="mb-8">
+<h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add_box</span> Rapid Item Logging
+                </h3>
+<form class="space-y-3">
+<div>
+<input class="w-full text-sm border-slate-200 rounded-lg focus:ring-primary focus:border-primary px-3 py-2 bg-slate-50" placeholder="Item Name / Model" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<select class="text-sm border-slate-200 rounded-lg focus:ring-primary focus:border-primary px-3 py-2 bg-slate-50">
+<option>Category</option>
+<option>Electronics</option>
+<option>Documents</option>
+<option>Keys/Valuables</option>
+</select>
+<select class="text-sm border-slate-200 rounded-lg focus:ring-primary focus:border-primary px-3 py-2 bg-slate-50">
+<option>Gate/Area</option>
+<option>Gate A1-A20</option>
+<option>Food Court</option>
+<option>Parking P1</option>
+</select>
+</div>
+<textarea class="w-full text-sm border-slate-200 rounded-lg focus:ring-primary focus:border-primary px-3 py-2 bg-slate-50 h-20" placeholder="Brief description (max 100 chars)"></textarea>
+<button class="w-full bg-primary text-white text-sm font-bold py-2.5 rounded-lg hover:bg-accent transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-base">publish</span> Log New Finding
+                    </button>
+</form>
+</div>
+<hr class="border-slate-100 my-6"/>
+<div>
+<h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">filter_list</span> Advanced Filters
+                </h3>
+<div class="space-y-4">
+<div class="space-y-1.5">
+<label class="text-[11px] font-bold text-slate-600">Keyword Search</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2.5 top-2 text-slate-400 text-sm">search</span>
+<input class="w-full text-sm pl-9 pr-3 py-2 border-slate-200 rounded-lg bg-slate-50" placeholder="ID, Tag, Description..." type="text"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-[11px] font-bold text-slate-600">Time Range</label>
+<select class="w-full text-sm border-slate-200 rounded-lg bg-slate-50">
+<option>Last 24 Hours</option>
+<option>Last 7 Days</option>
+<option>Custom Range</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="text-[11px] font-bold text-slate-600">Status</label>
+<div class="grid grid-cols-2 gap-2">
+<label class="flex items-center gap-2 bg-slate-50 p-2 rounded-lg cursor-pointer border border-slate-200">
+<input checked="" class="rounded text-primary focus:ring-0" type="checkbox"/>
+<span class="text-xs font-medium">Unclaimed</span>
+</label>
+<label class="flex items-center gap-2 bg-slate-50 p-2 rounded-lg cursor-pointer border border-slate-200">
+<input class="rounded text-primary focus:ring-0" type="checkbox"/>
+<span class="text-xs font-medium">Claimed</span>
+</label>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-[11px] font-bold text-slate-600">Storage Location</label>
+<select class="w-full text-sm border-slate-200 rounded-lg bg-slate-50">
+<option>All Facilities</option>
+<option>Main Locker (T4)</option>
+<option>Secure Vault</option>
+</select>
+</div>
+<button class="w-full py-2 text-xs font-bold text-slate-500 hover:text-slate-800 flex items-center justify-center gap-1 border border-dashed border-slate-300 rounded-lg mt-4">
+<span class="material-symbols-outlined text-sm">restart_alt</span> Reset All Filters
+                    </button>
+</div>
+</div>
+</aside>
+<main class="main-content flex-grow p-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+<div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+<p class="text-[10px] font-bold text-slate-500 uppercase">Items Pending Claim</p>
+<div class="flex items-end justify-between mt-1">
+<span class="text-2xl font-black text-slate-900">428</span>
+<span class="text-emerald-600 text-[10px] font-bold bg-emerald-50 px-1.5 py-0.5 rounded flex items-center">
+<span class="material-symbols-outlined text-[12px]">trending_up</span> 12%
+                        </span>
+</div>
+</div>
+<div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+<p class="text-[10px] font-bold text-slate-500 uppercase">New Findings Today</p>
+<div class="flex items-end justify-between mt-1">
+<span class="text-2xl font-black text-slate-900">24</span>
+<span class="text-slate-500 text-[10px] font-bold">In 8h shift</span>
+</div>
+</div>
+<div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+<p class="text-[10px] font-bold text-slate-500 uppercase">Processing Time</p>
+<div class="flex items-end justify-between mt-1">
+<span class="text-2xl font-black text-slate-900">1.4h</span>
+<span class="text-emerald-600 text-[10px] font-bold bg-emerald-50 px-1.5 py-0.5 rounded">Fast</span>
+</div>
+</div>
+<div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+<p class="text-[10px] font-bold text-slate-500 uppercase">Return Success Rate</p>
+<div class="flex items-end justify-between mt-1">
+<span class="text-2xl font-black text-slate-900">76%</span>
+<div class="w-16 bg-slate-100 h-1 rounded-full mb-2">
+<div class="bg-primary h-1 rounded-full" style="width: 76%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+<div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50/50">
+<div class="flex items-center gap-3">
+<h2 class="font-bold text-slate-800">Recent Operational Findings</h2>
+<span class="bg-slate-200 text-slate-600 text-[10px] font-bold px-2 py-0.5 rounded-full">LIVE VIEW</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-white rounded-lg border border-transparent hover:border-slate-200 transition-all">
+<span class="material-symbols-outlined text-slate-500">grid_view</span>
+</button>
+<button class="p-2 bg-white rounded-lg border border-slate-200 shadow-sm">
+<span class="material-symbols-outlined text-slate-800">view_list</span>
+</button>
+<div class="h-6 w-px bg-slate-200 mx-1"></div>
+<button class="flex items-center gap-2 bg-white border border-slate-200 px-3 py-1.5 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-sm">download</span> Export CSV
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50/80 border-b border-slate-200">
+<th class="px-6 py-3 text-[10px] font-black text-slate-400 uppercase tracking-widest">Item Info</th>
+<th class="px-6 py-3 text-[10px] font-black text-slate-400 uppercase tracking-widest">Tag ID</th>
+<th class="px-6 py-3 text-[10px] font-black text-slate-400 uppercase tracking-widest">Location Found</th>
+<th class="px-6 py-3 text-[10px] font-black text-slate-400 uppercase tracking-widest">Found Date</th>
+<th class="px-6 py-3 text-[10px] font-black text-slate-400 uppercase tracking-widest">Status</th>
+<th class="px-6 py-3 text-[10px] font-black text-slate-400 uppercase tracking-widest text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-slate-100 overflow-hidden shrink-0">
+<div class="size-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAT0MVK3stR7AcWlTkqp8Gw2QAaZsix9qbkkqHrM7mzDpWNeZg3Cwc6kwzU5i_Ok2hAfEYI1x3CL4yxuvTQ-zVW1CO4qFsW0Q0LjI-BVusjqaE_uaI4boL65aVUcE5hN5dti0wv8KpB2P4fKxjeDI_lXEAytOkhkCYQHXW6jKfnMh75Fj7Y7U0aQjFeDHtPWyOxMKhwPXWTtlawSP0nnY_s5v0aohxML7n9_9hLnhqNS88aBVDlIOcFPMPSTVADve62Gv13e8ztZi4d");'></div>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900">iPhone 13 - Silver</p>
+<p class="text-[11px] text-slate-500">Electronics / Mobile</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4"><span class="text-xs font-mono font-bold text-slate-600 bg-slate-100 px-2 py-1 rounded">#LF-8842-A</span></td>
+<td class="px-6 py-4 text-xs font-medium text-slate-700">Terminal 4, Gate A12</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-900">Oct 24, 2023</span>
+<span class="text-[10px] text-slate-500">14:30 EST</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-amber-50 text-amber-600 border border-amber-200">UNCLAIMED</span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="text-primary hover:underline text-[11px] font-bold">Match</button>
+<button class="size-8 flex items-center justify-center bg-slate-100 text-slate-500 rounded-lg hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-slate-100 overflow-hidden shrink-0">
+<div class="size-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_H079jEXTyflXYSe304KR9l8rV8lcXkkLHW_EgI0_zFqTx9OahBQCHTb2Ai54xcoK5IbzCm-SdDdRfwxJyPQNdYjn-TTvdn77PgRKH7At9r5JEfEFszPfBUU62ugSK1BfxqxyG4_-sRiCqYmDtyoUn5PKGzFiVhj8CP2SwGr5l-QWRaMhzPcDogQTpMazpCobDl9J_w-oJXA73lr7rq8Vg7LJtpgKiHh56fAS3yIAl_jTqUJZ5CQdLVsp4ZMcTNF62Zr0vJ8_aAMx");'></div>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900">Brown Leather Wallet</p>
+<p class="text-[11px] text-slate-500">Accessories / Valuables</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4"><span class="text-xs font-mono font-bold text-slate-600 bg-slate-100 px-2 py-1 rounded">#LF-8840-B</span></td>
+<td class="px-6 py-4 text-xs font-medium text-slate-700">Central Food Court</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-900">Oct 24, 2023</span>
+<span class="text-[10px] text-slate-500">11:15 EST</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-600 border border-blue-200">IN STORAGE</span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="text-primary hover:underline text-[11px] font-bold">Match</button>
+<button class="size-8 flex items-center justify-center bg-slate-100 text-slate-500 rounded-lg hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-slate-100 overflow-hidden shrink-0">
+<div class="size-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSncqjl9vhltdNiPYEe3SGVk4wrtoPJTPnzF2HaXGAmyfgGtZ-5H5fl_aHeM5jVtWQ2zoUZ1yPLKXkUwwvz4j61UVDBRiHjysPFHHfe7i2LKlPq5Qe9_7iOzavNrAS_7-CR_0bzh0T9k0Gc38FxwIAGbJWOABWh0aeHf_WLHAdV1fyCNqwE3JIb9wPfD6A97I0Zc-6E7F6qy6f5-zdprv6g07uAw6Lpe8EDD3aPYZ3KW1jt1ubD3MY-fW2paZ4w-HbSOSg_EaNIbOI");'></div>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900">Lanyard Keys (3x)</p>
+<p class="text-[11px] text-slate-500">Personal / Keys</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4"><span class="text-xs font-mono font-bold text-slate-600 bg-slate-100 px-2 py-1 rounded">#LF-8839-A</span></td>
+<td class="px-6 py-4 text-xs font-medium text-slate-700">Parking Garage P1</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-900">Oct 23, 2023</span>
+<span class="text-[10px] text-slate-500">09:45 EST</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-600 border border-emerald-200">CLAIMED</span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="text-slate-400 cursor-not-allowed text-[11px] font-bold">Closed</button>
+<button class="size-8 flex items-center justify-center bg-slate-100 text-slate-500 rounded-lg hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-slate-200 shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">image</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900">Navy Blue Backpack</p>
+<p class="text-[11px] text-slate-500">Bags / Luggage</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4"><span class="text-xs font-mono font-bold text-slate-600 bg-slate-100 px-2 py-1 rounded">#LF-8835-C</span></td>
+<td class="px-6 py-4 text-xs font-medium text-slate-700">Ticketing Hall B</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-900">Oct 23, 2023</span>
+<span class="text-[10px] text-slate-500">18:10 EST</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-rose-50 text-rose-600 border border-rose-200">VERIFYING</span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="text-primary hover:underline text-[11px] font-bold">Match</button>
+<button class="size-8 flex items-center justify-center bg-slate-100 text-slate-500 rounded-lg hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-slate-200 flex items-center justify-between bg-white text-xs font-bold text-slate-500">
+<span>Showing 1-15 of 428 findings</span>
+<div class="flex items-center gap-1">
+<button class="size-8 border border-slate-200 rounded-lg flex items-center justify-center hover:bg-slate-50"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="size-8 bg-primary text-white border border-primary rounded-lg flex items-center justify-center">1</button>
+<button class="size-8 border border-slate-200 rounded-lg flex items-center justify-center hover:bg-slate-50">2</button>
+<button class="size-8 border border-slate-200 rounded-lg flex items-center justify-center hover:bg-slate-50">3</button>
+<span class="px-2">...</span>
+<button class="size-8 border border-slate-200 rounded-lg flex items-center justify-center hover:bg-slate-50">29</button>
+<button class="size-8 border border-slate-200 rounded-lg flex items-center justify-center hover:bg-slate-50"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+<div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+<h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center justify-between">
+                        Pending Claim Requests
+                        <a class="text-primary text-[10px]" href="#">Review All</a>
+</h3>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 bg-slate-50 rounded-lg border border-slate-100">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-200 flex items-center justify-center"><span class="material-symbols-outlined text-sm">person</span></div>
+<div>
+<p class="text-xs font-bold text-slate-900">Sarah Jenkins</p>
+<p class="text-[10px] text-slate-500">Claiming: Silver Laptop</p>
+</div>
+</div>
+<span class="text-[10px] font-bold text-slate-400">12m ago</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-slate-50 rounded-lg border border-slate-100">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-200 flex items-center justify-center"><span class="material-symbols-outlined text-sm">person</span></div>
+<div>
+<p class="text-xs font-bold text-slate-900">Michael Ross</p>
+<p class="text-[10px] text-slate-500">Claiming: Black Suitcase</p>
+</div>
+</div>
+<span class="text-[10px] font-bold text-slate-400">45m ago</span>
+</div>
+</div>
+</div>
+<div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+<h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center justify-between">
+                        Storage Capacity (Terminal 4)
+                        <span class="text-rose-500 text-[10px]">85% Full</span>
+</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-[10px] font-bold text-slate-600 mb-1">
+<span>Main Locker A</span>
+<span>92/100 units</span>
+</div>
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+<div class="bg-rose-500 h-full" style="width: 92%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[10px] font-bold text-slate-600 mb-1">
+<span>Electronics Safe</span>
+<span>45/50 units</span>
+</div>
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+<div class="bg-amber-500 h-full" style="width: 90%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

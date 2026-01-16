@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Search and Browse Results | Lost &amp; Found</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#22a8c3",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#121e20",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #dce3e5;
+            border-radius: 10px;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#121617] dark:text-white transition-colors duration-300">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-[#f0f3f4] dark:border-white/10 px-4 md:px-10 py-3">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between gap-4">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">radar</span>
+<h2 class="text-[#121617] dark:text-white text-xl font-black tracking-tight">TraceBack</h2>
+</div>
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-[#121617] dark:text-white/80 text-sm font-semibold hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-primary text-sm font-semibold" href="#">Browse</a>
+<a class="text-[#121617] dark:text-white/80 text-sm font-semibold hover:text-primary transition-colors" href="#">Report Item</a>
+<a class="text-[#121617] dark:text-white/80 text-sm font-semibold hover:text-primary transition-colors" href="#">Community</a>
+</nav>
+</div>
+<div class="flex-1 max-w-md hidden md:block">
+<label class="relative block">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-[#658086]">
+<span class="material-symbols-outlined">search</span>
+</span>
+<input class="w-full bg-[#f0f3f4] dark:bg-white/5 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Search for items, locations..." type="text"/>
+</label>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex items-center justify-center rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                    Sign In
+                </button>
+<div class="size-10 rounded-full bg-primary/10 border-2 border-primary/20 flex items-center justify-center overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="User avatar illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAXw2mfzl2w-aqCrUF4Cz9LVomqnOL39EC-9We3FMTKI6vPU7lbusMA5IjY_fu40mS1OIO6nvIsNPHsoXoJ4EMDrXj7J53oeOipSobOY4tQzB3j4dzwmocroYUJmepIZm7qQrbhgjwvBe1xZjoUapk9qqRg-jyyKmce_ikYovWJfhdFkWC9mKJy9ZFP37TCV9zG9EVMEMa9Z0tpSD3u9FrUtLINfx6ouk_POkqz9i-Zeq7xXJyFeKwCyxixW6-2xaLsbTuo4PcxnY5"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto flex flex-col min-h-screen">
+<!-- Breadcrumbs & Heading -->
+<div class="px-4 md:px-10 pt-6">
+<div class="flex items-center gap-2 text-xs font-medium text-[#658086] mb-4">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary">Search Results</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-[#f0f3f4] dark:border-white/10">
+<div class="space-y-1">
+<h1 class="text-3xl md:text-4xl font-black tracking-tight">124 items near London</h1>
+<p class="text-[#658086] text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                        Live updates from last 2 minutes
+                    </p>
+</div>
+<div class="flex items-center gap-3">
+<label class="text-xs font-bold uppercase tracking-wider text-[#658086]">Sort by:</label>
+<select class="bg-white dark:bg-white/5 border border-[#f0f3f4] dark:border-white/10 rounded-lg text-sm font-semibold py-2 pl-3 pr-8 focus:ring-primary">
+<option>Most Recent</option>
+<option>Distance: Nearest</option>
+<option>Relevance</option>
+</select>
+</div>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-8 px-4 md:px-10 py-8">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-72 flex-shrink-0 space-y-8">
+<div class="bg-white dark:bg-white/5 rounded-xl p-6 border border-[#f0f3f4] dark:border-white/10 shadow-sm sticky top-24">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold text-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">filter_list</span>
+                            Filters
+                        </h3>
+<button class="text-xs font-bold text-primary hover:underline">Reset</button>
+</div>
+<!-- Category Checklist -->
+<div class="space-y-4 mb-8">
+<p class="text-xs font-bold uppercase tracking-widest text-[#658086]">Categories</p>
+<div class="space-y-1">
+<label class="flex items-center gap-3 py-1 cursor-pointer group">
+<input checked="" class="rounded border-[#dce3e5] text-primary focus:ring-primary size-5" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Electronics</span>
+</label>
+<label class="flex items-center gap-3 py-1 cursor-pointer group">
+<input class="rounded border-[#dce3e5] text-primary focus:ring-primary size-5" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Pets &amp; Animals</span>
+</label>
+<label class="flex items-center gap-3 py-1 cursor-pointer group">
+<input class="rounded border-[#dce3e5] text-primary focus:ring-primary size-5" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Bags &amp; Wallets</span>
+</label>
+<label class="flex items-center gap-3 py-1 cursor-pointer group">
+<input class="rounded border-[#dce3e5] text-primary focus:ring-primary size-5" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Keys &amp; Documents</span>
+</label>
+</div>
+</div>
+<!-- Location Radius -->
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center">
+<p class="text-xs font-bold uppercase tracking-widest text-[#658086]">Search Radius</p>
+<span class="text-sm font-bold text-primary">15 km</span>
+</div>
+<input class="w-full h-1.5 bg-[#f0f3f4] dark:bg-white/10 rounded-lg appearance-none cursor-pointer accent-primary" max="50" min="1" type="range" value="15"/>
+<div class="flex justify-between text-[10px] text-[#658086] font-bold">
+<span>1 KM</span>
+<span>50 KM</span>
+</div>
+</div>
+<!-- Color Swatches -->
+<div class="space-y-4 mb-8">
+<p class="text-xs font-bold uppercase tracking-widest text-[#658086]">Item Color</p>
+<div class="flex flex-wrap gap-2">
+<button class="size-6 rounded-full bg-black ring-2 ring-offset-2 ring-primary border border-white/10"></button>
+<button class="size-6 rounded-full bg-white border border-[#dce3e5]"></button>
+<button class="size-6 rounded-full bg-red-500"></button>
+<button class="size-6 rounded-full bg-blue-500"></button>
+<button class="size-6 rounded-full bg-primary"></button>
+<button class="size-6 rounded-full bg-yellow-400"></button>
+<button class="size-6 rounded-full bg-green-500"></button>
+</div>
+</div>
+<!-- Date Range -->
+<div class="space-y-4">
+<p class="text-xs font-bold uppercase tracking-widest text-[#658086]">Time Period</p>
+<div class="space-y-2">
+<button class="w-full text-left px-3 py-2 rounded-lg bg-primary/10 text-primary border border-primary/20 text-xs font-bold">Last 24 Hours</button>
+<button class="w-full text-left px-3 py-2 rounded-lg bg-transparent border border-[#dce3e5] text-xs font-medium hover:bg-[#f0f3f4] transition-colors">Last 7 Days</button>
+<button class="w-full text-left px-3 py-2 rounded-lg bg-transparent border border-[#dce3e5] text-xs font-medium hover:bg-[#f0f3f4] transition-colors">Custom Range</button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Grid Content -->
+<div class="flex-1">
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Item Card 1 -->
+<div class="bg-white dark:bg-white/5 rounded-xl overflow-hidden border border-[#f0f3f4] dark:border-white/10 card-hover transition-all duration-300">
+<div class="relative aspect-video overflow-hidden group">
+<img alt="Found iPhone" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Found black iPhone on a park bench" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZQFLMe41DpM6SbcZQNQlJfGBIHTHtEQxdPKOwrvcuF5U9ASahGp1J-q-MOHnz_oc4LZSRgR3sgJrMAmTedc0sLDY4_d2jDBnzCkRKWwtjH3A0kY823XdxYmMgFmvpZm8nobX8ETwEErxtWOhVma3Rjm2GqxqU9i12R2OMFUu15ORguN_3yY3ELCqySRCGe5B1r0adPLKQGKFyncNWETut75AKrHXhK1mdPUou9C7tdm-Uhkp2e9LkvNBBxMRCyBVOpdFt4zSIP8yH"/>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary text-white text-[10px] font-black uppercase tracking-widest shadow-lg">Found</div>
+<button class="absolute top-3 right-3 size-8 rounded-full bg-white/90 dark:bg-black/50 backdrop-blur flex items-center justify-center text-[#121617] dark:text-white opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="p-5 space-y-3">
+<div>
+<h3 class="font-bold text-lg leading-tight truncate">iPhone 14 Pro Max</h3>
+<p class="text-[#658086] text-xs font-medium flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    Hyde Park, Central Circle
+                                </p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-[10px] font-bold text-[#658086] uppercase">2 hours ago</span>
+<button class="px-4 py-2 rounded-lg bg-[#f0f3f4] dark:bg-white/10 text-xs font-bold hover:bg-primary hover:text-white transition-colors">View Details</button>
+</div>
+</div>
+</div>
+<!-- Item Card 2 -->
+<div class="bg-white dark:bg-white/5 rounded-xl overflow-hidden border border-[#f0f3f4] dark:border-white/10 card-hover transition-all duration-300">
+<div class="relative aspect-video overflow-hidden group">
+<img alt="Lost Golden Retriever" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Lost golden retriever dog looking at camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUwSl2ZFNcWJkOwMvns1P-d8O45vmgXR7CnyebXyrLdQFx45LrHh02LTYC-AZVdARC7CKvZuiOp1V4DaUP80u0bZeU_sfkVlDJsKK9zXc6vWnIsGFYvn1ODBi5FusnyDXfmbA66eRMaPaRePh4qTVzSjj-ygKUIBs2N8Nj3n0ixkpTYHCVks_yoETAI46wlpO2xVJ0BARbPKvpdpeeUsrsWzgED0CIzsp1uiwHkXnSsZN2uPYg0-cfmOQyZsE-6XQTOWsCKSP8-2Wn"/>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#121617] text-white text-[10px] font-black uppercase tracking-widest shadow-lg">Lost</div>
+<div class="absolute top-3 right-3 size-8 rounded-full bg-white/90 dark:bg-black/50 backdrop-blur flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm fill-1">favorite</span>
+</div>
+</div>
+<div class="p-5 space-y-3">
+<div>
+<h3 class="font-bold text-lg leading-tight truncate">Golden Retriever (Cooper)</h3>
+<p class="text-[#658086] text-xs font-medium flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    Wimbledon Common Area
+                                </p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-[10px] font-bold text-[#658086] uppercase">5 hours ago</span>
+<button class="px-4 py-2 rounded-lg bg-[#f0f3f4] dark:bg-white/10 text-xs font-bold hover:bg-primary hover:text-white transition-colors">View Details</button>
+</div>
+</div>
+</div>
+<!-- Item Card 3 -->
+<div class="bg-white dark:bg-white/5 rounded-xl overflow-hidden border border-[#f0f3f4] dark:border-white/10 card-hover transition-all duration-300">
+<div class="relative aspect-video overflow-hidden group">
+<img alt="Found Leather Wallet" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Found brown leather wallet on a sidewalk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmJhC4QmewefSqvEYPQ-u2rLAXvoaatrUzMEBANmIkbsLiaIcosHsP8Y9R0y6ITPMjR4sMlcfk3JZasdMySDOsBO9Wjr4TguGW6F31cZD_FSXQY2WSYN3EbFEv-KGB8V0DW1dHZsfCaBaEke9Kx0H3Olv3t_BgzjyGjCiOnAMiiqLIX3aJuyHuBEt4OHuMVMaaCD-Pv2R8zZgXA_I66eXGdRvn-lZxfS5F2wWqQsF8G9dOCmj43aTO-E8Qh05ZWV6naep-YLJD0wkr"/>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary text-white text-[10px] font-black uppercase tracking-widest shadow-lg">Found</div>
+</div>
+<div class="p-5 space-y-3">
+<div>
+<h3 class="font-bold text-lg leading-tight truncate">Brown Leather Wallet</h3>
+<p class="text-[#658086] text-xs font-medium flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    Paddington Station, Platform 4
+                                </p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-[10px] font-bold text-[#658086] uppercase">Yesterday</span>
+<button class="px-4 py-2 rounded-lg bg-[#f0f3f4] dark:bg-white/10 text-xs font-bold hover:bg-primary hover:text-white transition-colors">View Details</button>
+</div>
+</div>
+</div>
+<!-- Item Card 4 -->
+<div class="bg-white dark:bg-white/5 rounded-xl overflow-hidden border border-[#f0f3f4] dark:border-white/10 card-hover transition-all duration-300">
+<div class="relative aspect-video overflow-hidden group">
+<img alt="Found Keys" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Found set of car keys with a keychain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC2vAgZWBAkJzHWhJOyHCbS0yKwAmNzmDfaQ_SDiD6YbizjOV0lhynx9oDBK37nlUcn-zkOba5l9FcEi0t3LN6qOpLN8hizwBjNGGqdTctWfdsY5eU1IUMR1LsDlYSWS6fHELuz1duZEACxNo0X0-laCm7kEg6PWTZXT9z9YbWxyJ0aGwjbDRl4LxgkbXjN9U6fiGiUK9ZkqK-miP06-9rRvoWe9MPKHbLuPzUigErVVqjCf3olALrBOOIl8BnTRXJmt6Kzyl9uW9z"/>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary text-white text-[10px] font-black uppercase tracking-widest shadow-lg">Found</div>
+</div>
+<div class="p-5 space-y-3">
+<div>
+<h3 class="font-bold text-lg leading-tight truncate">BMW Car Keys</h3>
+<p class="text-[#658086] text-xs font-medium flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    Soho Square Gardens
+                                </p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-[10px] font-bold text-[#658086] uppercase">3 days ago</span>
+<button class="px-4 py-2 rounded-lg bg-[#f0f3f4] dark:bg-white/10 text-xs font-bold hover:bg-primary hover:text-white transition-colors">View Details</button>
+</div>
+</div>
+</div>
+<!-- Item Card 5 -->
+<div class="bg-white dark:bg-white/5 rounded-xl overflow-hidden border border-[#f0f3f4] dark:border-white/10 card-hover transition-all duration-300">
+<div class="relative aspect-video overflow-hidden group">
+<img alt="Lost Blue Backpack" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Lost blue backpack with hiking gear" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQsQPqA_5TFGmI6yenBeoOMnL-G-KtujEehIRuacfRhA70KtHMtLq6vt_2UKW3UHr6dBILWpXnXCdgP0DeVSlo6N0RBhjIF5xOGPurvWaVAotLfSZKOTaPnqmv7SLnbXHa3A4MDXkJSQn9Nm3slcpklRKb95BRw8LfcsKCSvV7wfpKwM-EFnu1ET3vQs2QzZa8hZCRPh-8vJwcPEovsI0DGDBJi2J1IdE_CDN6yZvOUCsgkBctOxEBY4jogJyyhA1WCy6xRKzFdH8r"/>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#121617] text-white text-[10px] font-black uppercase tracking-widest shadow-lg">Lost</div>
+</div>
+<div class="p-5 space-y-3">
+<div>
+<h3 class="font-bold text-lg leading-tight truncate">Nike Sport Backpack</h3>
+<p class="text-[#658086] text-xs font-medium flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    King's Cross Underground
+                                </p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-[10px] font-bold text-[#658086] uppercase">Today</span>
+<button class="px-4 py-2 rounded-lg bg-[#f0f3f4] dark:bg-white/10 text-xs font-bold hover:bg-primary hover:text-white transition-colors">View Details</button>
+</div>
+</div>
+</div>
+<!-- Item Card 6 -->
+<div class="bg-white dark:bg-white/5 rounded-xl overflow-hidden border border-[#f0f3f4] dark:border-white/10 card-hover transition-all duration-300">
+<div class="relative aspect-video overflow-hidden group">
+<img alt="Found Sneakers" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Found green running shoes in a gym" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALwMw70OxUqX3_Df5nZwZ6FIa68OFEOrmGL9pSUI14Q-uUTTvIps2VsEFnDwIPag9IstfULhet43m-AFvFq8hba_qydPJOE-bnIavfl26OKQuFiZjxen9FxYmC997-BM9POO-jniRlrHGsa3_bgbAt14V1Bbh-Qr-KI84H1pMpyGEg-eFUWTXWx-wI43wE0AEfMuqpxkjXrtxVuwzxU9hpnFGnHItCz234KeY0Fecl3BeqWJK53fyXZMlJOd6kmRMjAQrlxlS5_7la"/>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary text-white text-[10px] font-black uppercase tracking-widest shadow-lg">Found</div>
+</div>
+<div class="p-5 space-y-3">
+<div>
+<h3 class="font-bold text-lg leading-tight truncate">Green Running Shoes</h3>
+<p class="text-[#658086] text-xs font-medium flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    Regent's Park Track
+                                </p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-[10px] font-bold text-[#658086] uppercase">Yesterday</span>
+<button class="px-4 py-2 rounded-lg bg-[#f0f3f4] dark:bg-white/10 text-xs font-bold hover:bg-primary hover:text-white transition-colors">View Details</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex items-center justify-center gap-2">
+<button class="size-10 rounded-lg flex items-center justify-center border border-[#dce3e5] hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="size-10 rounded-lg flex items-center justify-center bg-primary text-white font-bold">1</button>
+<button class="size-10 rounded-lg flex items-center justify-center hover:bg-[#f0f3f4] dark:hover:bg-white/10 font-bold transition-all">2</button>
+<button class="size-10 rounded-lg flex items-center justify-center hover:bg-[#f0f3f4] dark:hover:bg-white/10 font-bold transition-all">3</button>
+<span class="px-2 text-[#658086]">...</span>
+<button class="size-10 rounded-lg flex items-center justify-center hover:bg-[#f0f3f4] dark:hover:bg-white/10 font-bold transition-all">12</button>
+<button class="size-10 rounded-lg flex items-center justify-center border border-[#dce3e5] hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Map Preview Trigger (Floating Button) -->
+<button class="fixed bottom-8 right-8 bg-[#121617] text-white px-6 py-4 rounded-full shadow-2xl flex items-center gap-3 group hover:bg-primary transition-all duration-300 z-40">
+<span class="material-symbols-outlined group-hover:rotate-12 transition-transform">map</span>
+<span class="font-bold text-sm">Toggle Map View</span>
+</button>
+<footer class="bg-white dark:bg-white/5 border-t border-[#f0f3f4] dark:border-white/10 mt-20 py-10 px-10">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+<div class="space-y-4">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-2xl font-bold">radar</span>
+<h2 class="text-[#121617] dark:text-white text-lg font-black tracking-tight">TraceBack</h2>
+</div>
+<p class="text-sm text-[#658086] leading-relaxed">Helping communities reconnect with their belongings through trust and technology.</p>
+</div>
+<div>
+<h4 class="font-bold text-sm mb-4">Platform</h4>
+<ul class="space-y-2 text-sm text-[#658086]">
+<li><a class="hover:text-primary transition-colors" href="#">How it works</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Success Stories</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Verified Users</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-sm mb-4">Support</h4>
+<ul class="space-y-2 text-sm text-[#658086]">
+<li><a class="hover:text-primary transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Safety Tips</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-sm mb-4">Stay Notified</h4>
+<div class="flex gap-2">
+<input class="flex-1 bg-[#f0f3f4] dark:bg-white/5 border-none rounded-lg py-2 px-3 text-xs focus:ring-1 focus:ring-primary outline-none" placeholder="Your email" type="email"/>
+<button class="bg-primary text-white p-2 rounded-lg">
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto mt-10 pt-6 border-t border-[#f0f3f4] dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#658086] font-medium">
+<p>© 2024 TraceBack Technologies. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Cookie Settings</a>
+</div>
+</div>
+</footer>
+</body></html>

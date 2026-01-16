@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Campus Lost &amp; Found | Reuniting Essentials</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e8ba30",
+                        "secondary": "#4D9E9E",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#211d11",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#1b180e] dark:text-white transition-colors duration-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+<div class="w-full flex justify-center border-b border-solid border-[#f3f0e7] dark:border-[#3a3528] bg-white/80 dark:bg-[#2a261a]/80 backdrop-blur-md sticky top-0 z-50">
+<header class="flex w-full max-w-[1200px] items-center justify-between px-6 py-3 md:px-10">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">search_insights</span>
+</div>
+<h2 class="text-[#1b180e] dark:text-white text-lg font-extrabold leading-tight tracking-[-0.015em]">CampusFound</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#1b180e] dark:text-[#e0dbcd] text-sm font-semibold hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-[#1b180e] dark:text-[#e0dbcd] text-sm font-semibold hover:text-primary transition-colors" href="#">Browse</a>
+<a class="text-[#1b180e] dark:text-[#e0dbcd] text-sm font-semibold hover:text-primary transition-colors" href="#">Report</a>
+</nav>
+<div class="h-6 w-px bg-[#f3f0e7] dark:bg-[#3a3528] hidden md:block"></div>
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-xl h-10 px-4 bg-primary text-white text-sm font-bold shadow-sm hover:shadow-md transition-all">
+<span>Account</span>
+</button>
+</div>
+</header>
+</div>
+<main class="flex flex-1 flex-col items-center">
+<div class="layout-content-container flex flex-col max-w-[1200px] w-full px-6 md:px-10">
+<!-- Hero Section -->
+<section class="py-12 md:py-20">
+<div class="flex flex-col gap-10 md:flex-row items-center">
+<div class="flex flex-col gap-8 flex-1">
+<div class="flex flex-col gap-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+                                        Student-to-Student Platform
+                                    </div>
+<h1 class="text-[#1b180e] dark:text-white text-4xl md:text-6xl font-black leading-[1.1] tracking-tight">
+                                        Reuniting Classmates with their <span class="text-primary">Essentials</span>.
+                                    </h1>
+<p class="text-[#4b4537] dark:text-[#b5ae9b] text-lg max-w-[500px] leading-relaxed">
+                                        A dedicated community hub for our university. Lost your keys? Found a laptop? Let's get things back to their owners.
+                                    </p>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center gap-2 rounded-xl h-14 px-6 bg-primary text-white text-base font-bold shadow-lg hover:brightness-105 transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+                                        Report a Lost Item
+                                    </button>
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center gap-2 rounded-xl h-14 px-6 bg-secondary text-white text-base font-bold shadow-lg hover:brightness-105 transition-all">
+<span class="material-symbols-outlined">search</span>
+                                        Search Found Items
+                                    </button>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative">
+<div class="absolute -top-4 -left-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl"></div>
+<div class="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/20 rounded-full blur-3xl"></div>
+<div class="relative w-full aspect-video bg-cover bg-center rounded-3xl shadow-2xl border-8 border-white dark:border-[#2a261a]" data-alt="Students studying together in a sunny university campus courtyard" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCM9g43jxdbnuCeFXJxAjl86OcdxAnzPKZD_CDylokkjcwUb3kAU5sM758-aL4FLeFPLhv6KEpGefvpelJI2oC3YAwN8OBf4gzCEOvXYzEPeo9NKIi8KxcGqWlpQrKo4BDkBMtzWt8Gm9VdL1SaU1Pv1gnTFvwYtXmELHBQla47BoArF30D69mCzKEywjBwEApcHiWa0eaWZ6dgiV4rV5TJvbDc-lfacrA-WdZHkJkOy5XkVPTcWJKTsA_I1GiFW_4-QSuPS1-AwLDc");'>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Stats -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-y border-[#f3f0e7] dark:border-[#3a3528]">
+<div class="text-center">
+<p class="text-3xl font-black text-primary">1,240+</p>
+<p class="text-sm font-medium text-[#97854e]">Items Found</p>
+</div>
+<div class="text-center border-l border-[#f3f0e7] dark:border-[#3a3528]">
+<p class="text-3xl font-black text-secondary">85%</p>
+<p class="text-sm font-medium text-[#97854e]">Success Rate</p>
+</div>
+<div class="text-center border-l border-[#f3f0e7] dark:border-[#3a3528]">
+<p class="text-3xl font-black text-primary">2.5k</p>
+<p class="text-sm font-medium text-[#97854e]">Active Students</p>
+</div>
+<div class="text-center border-l border-[#f3f0e7] dark:border-[#3a3528]">
+<p class="text-3xl font-black text-secondary">4h</p>
+<p class="text-sm font-medium text-[#97854e]">Avg. Return Time</p>
+</div>
+</div>
+<!-- Search and Filters -->
+<div class="pt-12 pb-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<h2 class="text-2xl font-bold tracking-tight text-[#1b180e] dark:text-white">Recently Found on Campus</h2>
+<div class="flex gap-2 p-1 bg-white dark:bg-[#2a261a] rounded-xl shadow-sm border border-[#f3f0e7] dark:border-[#3a3528] overflow-x-auto no-scrollbar">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/10 text-primary px-4">
+<span class="text-sm font-bold">All Items</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg hover:bg-background-light dark:hover:bg-background-dark px-4 transition-colors">
+<span class="material-symbols-outlined text-lg">laptop_mac</span>
+<p class="text-sm font-medium">Electronics</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg hover:bg-background-light dark:hover:bg-background-dark px-4 transition-colors">
+<span class="material-symbols-outlined text-lg">book</span>
+<p class="text-sm font-medium">Books</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg hover:bg-background-light dark:hover:bg-background-dark px-4 transition-colors">
+<span class="material-symbols-outlined text-lg">vpn_key</span>
+<p class="text-sm font-medium">Keys</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg hover:bg-background-light dark:hover:bg-background-dark px-4 transition-colors">
+<span class="material-symbols-outlined text-lg">apparel</span>
+<p class="text-sm font-medium">Clothing</p>
+</button>
+</div>
+</div>
+</div>
+<!-- Items Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-20">
+<!-- Card 1 -->
+<div class="flex flex-col bg-white dark:bg-[#2a261a] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-[#f3f0e7] dark:border-[#3a3528] group">
+<div class="relative h-48 w-full overflow-hidden">
+<div class="absolute top-3 right-3 z-10 bg-white/90 dark:bg-[#2a261a]/90 backdrop-blur px-2 py-1 rounded-md text-[10px] font-bold uppercase text-secondary border border-secondary/20">Found</div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover group-hover:scale-110 transition-transform duration-500" data-alt="Pair of white wireless earbuds in their charging case" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNTREDGLl6Eengkr-QlGnuGVibgMI9Ofije9PvBjNKXqqcSe-iUm2219nFB3qWBLcBD3O1x7r3fa5OWytfmBXrkdo7-jV000JGi77U3ibduaqycCCF1lun745cbuQ4M_A4LCItw8kgI7YZnCVsFDDjNQY42wEc5i0ZPooEjHwFr1N3RSEzmPWzUizRegeM1myJ_0rvp1bLDvyvrXNoUuLhG3ydw9stHIHVvDghGcU6lVYiZ_N69Vl_RN9sPa0uhHVQTzotH-FGNizB");'></div>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<h3 class="text-[#1b180e] dark:text-white text-base font-bold leading-tight">AirPods Pro</h3>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2 text-[#97854e] dark:text-[#b5ae9b]">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-xs">Library, Level 2 (West Wing)</span>
+</div>
+<div class="flex items-center gap-2 text-[#97854e] dark:text-[#b5ae9b]">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span class="text-xs">2 hours ago</span>
+</div>
+</div>
+<button class="mt-2 w-full h-10 border-2 border-primary/20 text-primary font-bold text-sm rounded-xl hover:bg-primary hover:text-white transition-all">
+                                    View Details
+                                </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col bg-white dark:bg-[#2a261a] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-[#f3f0e7] dark:border-[#3a3528] group">
+<div class="relative h-48 w-full overflow-hidden">
+<div class="absolute top-3 right-3 z-10 bg-white/90 dark:bg-[#2a261a]/90 backdrop-blur px-2 py-1 rounded-md text-[10px] font-bold uppercase text-secondary border border-secondary/20">Found</div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover group-hover:scale-110 transition-transform duration-500" data-alt="Open spiral notebook with chemistry equations written on pages" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBdGinIIsNcticnDKl1p2_rj4IRtZuffVIfInlsYGU9CaX-0ZWi3__Kpd_M27wSFbAfytXJg-pEYtl8pu2qJaj14V7g2DuBOxXwqMKFZK7wbZYDpxo5la1KbqjiEBbn9CrEioLIgRzOhZ9dLAKRmHp8Awc6elfAb2kPqF-T7MPqf5CFdRKIfDy2XNZ3bhwBYKhuLN1AJjBasK7DOHbjbFe8hjPcu5VxNsAtmlhI_s5T1OVnDNi6wFuQYgQ_HV_mxZ2dS0_F9_BN6iEz");'></div>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<h3 class="text-[#1b180e] dark:text-white text-base font-bold leading-tight">Chemistry Notebook</h3>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2 text-[#97854e] dark:text-[#b5ae9b]">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-xs">Science Hall 101</span>
+</div>
+<div class="flex items-center gap-2 text-[#97854e] dark:text-[#b5ae9b]">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span class="text-xs">Today, 09:15 AM</span>
+</div>
+</div>
+<button class="mt-2 w-full h-10 border-2 border-primary/20 text-primary font-bold text-sm rounded-xl hover:bg-primary hover:text-white transition-all">
+                                    View Details
+                                </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col bg-white dark:bg-[#2a261a] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-[#f3f0e7] dark:border-[#3a3528] group">
+<div class="relative h-48 w-full overflow-hidden">
+<div class="absolute top-3 right-3 z-10 bg-white/90 dark:bg-[#2a261a]/90 backdrop-blur px-2 py-1 rounded-md text-[10px] font-bold uppercase text-secondary border border-secondary/20">Found</div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover group-hover:scale-110 transition-transform duration-500" data-alt="Blue reusable water bottle sitting on a wooden bench" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDm3WsAgPLTvRjsetoCCa0XTe7Yv1vOWzqvnK7EQP5o8avG_yygSt3g42N-wLii2XqPTd7ft-lq8mZlp26tqcCJ8eIj_mvcbPpalIQLbdUf16X_kJU5nA6vjATVPbsUzmRdrjEo_3VkmbJmOKTwxYNS8Jnm66f999-ynDHfRXRsm5Fs0Dvd7MOVg_wo9onzLQUP_rQSyxNkVMlXV_oD6giEr6QOW95_673X5gVVbovApGJMBOuXPaB4diZ8aUAv0b__136OSW-Ph_LK");'></div>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<h3 class="text-[#1b180e] dark:text-white text-base font-bold leading-tight">Blue Water Bottle</h3>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2 text-[#97854e] dark:text-[#b5ae9b]">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-xs">Gym Locker Room</span>
+</div>
+<div class="flex items-center gap-2 text-[#97854e] dark:text-[#b5ae9b]">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span class="text-xs">Yesterday</span>
+</div>
+</div>
+<button class="mt-2 w-full h-10 border-2 border-primary/20 text-primary font-bold text-sm rounded-xl hover:bg-primary hover:text-white transition-all">
+                                    View Details
+                                </button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex flex-col bg-white dark:bg-[#2a261a] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-[#f3f0e7] dark:border-[#3a3528] group">
+<div class="relative h-48 w-full overflow-hidden">
+<div class="absolute top-3 right-3 z-10 bg-white/90 dark:bg-[#2a261a]/90 backdrop-blur px-2 py-1 rounded-md text-[10px] font-bold uppercase text-secondary border border-secondary/20">Found</div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover group-hover:scale-110 transition-transform duration-500" data-alt="Generic student ID card with a blurry face and university logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBJs6xPGpcLWwGaCsGO9GsIHcEqF0ZCO27HR1WCqzVlUqEgcE3ln13WoRv8kWzC50IgbHHTzPL6HoJBrVjwBAswIhO-JneYMFUmxyTkMF5_SFUafE2HvnZTBM-PA6_5IGxE8epZzjWfTU3Ou9CeNhCSZRBp5eAgQ40PuX3Y5FYBgeW9zoBGfX32mhvr17nAwKmAaTPlaRG3ltGpmOPdiNUq_l2JNBDCAPmwsQg51_9361ep-gIWiWgeHruLjbQvmF5EkOenOZBCpco2");'></div>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<h3 class="text-[#1b180e] dark:text-white text-base font-bold leading-tight">Student ID Card</h3>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2 text-[#97854e] dark:text-[#b5ae9b]">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-xs">Student Union Cafe</span>
+</div>
+<div class="flex items-center gap-2 text-[#97854e] dark:text-[#b5ae9b]">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span class="text-xs">3 hours ago</span>
+</div>
+</div>
+<button class="mt-2 w-full h-10 border-2 border-primary/20 text-primary font-bold text-sm rounded-xl hover:bg-primary hover:text-white transition-all">
+                                    View Details
+                                </button>
+</div>
+</div>
+</div>
+<!-- Community Section -->
+<section class="mb-20 p-10 bg-secondary rounded-[2rem] text-white flex flex-col md:flex-row items-center gap-10">
+<div class="flex-1 flex flex-col gap-4">
+<h2 class="text-3xl font-black">Help Us Keep the Campus Community Strong</h2>
+<p class="text-white/80 text-lg leading-relaxed">
+                                Join over 2,500 students who help keep our campus items safe. Reporting takes less than a minute and can save a classmate's day.
+                            </p>
+<div class="flex gap-4 pt-2">
+<button class="bg-white text-secondary px-6 h-12 rounded-xl font-bold hover:bg-primary hover:text-white transition-all">Learn More</button>
+<button class="bg-transparent border-2 border-white/30 px-6 h-12 rounded-xl font-bold hover:bg-white/10 transition-all">Contact Security</button>
+</div>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-[120px] opacity-20">diversity_3</span>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full flex justify-center py-12 bg-white dark:bg-[#1a170e] border-t border-[#f3f0e7] dark:border-[#3a3528]">
+<div class="w-full max-w-[1200px] px-10 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="size-6 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">search_insights</span>
+</div>
+<h2 class="text-[#1b180e] dark:text-white text-base font-extrabold">CampusFound</h2>
+</div>
+<p class="text-sm text-[#97854e] leading-relaxed">The official student-led lost and found platform for university classmates.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-[#1b180e] dark:text-white">Platform</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-sm text-[#97854e] hover:text-primary transition-colors" href="#">Browse Items</a>
+<a class="text-sm text-[#97854e] hover:text-primary transition-colors" href="#">Report Lost</a>
+<a class="text-sm text-[#97854e] hover:text-primary transition-colors" href="#">Claim Process</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-[#1b180e] dark:text-white">Support</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-sm text-[#97854e] hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="text-sm text-[#97854e] hover:text-primary transition-colors" href="#">Safety Tips</a>
+<a class="text-sm text-[#97854e] hover:text-primary transition-colors" href="#">Campus Security</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-[#1b180e] dark:text-white">Stay Updated</h4>
+<p class="text-xs text-[#97854e]">Get notified when items matching your search are found.</p>
+<div class="flex gap-2">
+<input class="w-full bg-background-light dark:bg-[#2a261a] border-[#f3f0e7] dark:border-[#3a3528] rounded-lg text-sm px-3 focus:ring-primary" placeholder="Email" type="email"/>
+<button class="bg-primary text-white p-2 rounded-lg">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

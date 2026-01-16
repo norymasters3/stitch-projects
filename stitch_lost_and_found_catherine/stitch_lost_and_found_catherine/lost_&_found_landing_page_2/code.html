@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Report Lost Item - CommunityHub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#22a8c3",
+                        "secondary": "#f39c12",
+                        "accent": "#e74c3c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#121e20",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Epilogue', sans-serif;
+        }
+        .bento-shadow {
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        .step-active { @apply bg-primary text-white; }
+        .step-pending { @apply bg-slate-100 text-slate-400; }
+        .map-mesh {
+            background-image: radial-gradient(#22a8c3 0.5px, transparent 0.5px);
+            background-size: 10px 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#121617] dark:text-white transition-colors duration-300">
+<div class="layout-container flex flex-col min-h-screen">
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-[#f0f3f4] dark:border-white/10 px-6 lg:px-40 py-4">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<svg class="size-6" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight">CommunityHub <span class="text-primary font-black">.</span></h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors flex items-center gap-1" href="#"><span class="material-symbols-outlined text-lg">map</span>Live Map</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors flex items-center gap-1" href="#"><span class="material-symbols-outlined text-lg">volunteer_activism</span>Success Stories</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:opacity-90 transition-all shadow-md">
+                    My Account
+                </button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<section class="px-6 lg:px-40 pt-10 pb-10">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/10 text-secondary text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">celebration</span>
+<span>1,240 Successful Reunions in your area</span>
+</div>
+<h1 class="text-4xl lg:text-5xl font-black tracking-tight">Report a Lost Item</h1>
+<p class="text-slate-500 max-w-lg">Don't worry, your neighbors are here to help. Our community successfully reunites 92% of reported items.</p>
+</div>
+<div class="flex gap-6">
+<div class="text-center">
+<p class="text-3xl font-black text-primary">15m</p>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Avg. Match Time</p>
+</div>
+<div class="h-12 w-px bg-slate-200 dark:bg-white/10"></div>
+<div class="text-center">
+<p class="text-3xl font-black text-secondary">4.8k</p>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Active Lookouts</p>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 lg:px-40 pb-20">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-7">
+<div class="bg-white dark:bg-slate-800 rounded-[2.5rem] bento-shadow border border-slate-100 dark:border-white/10 p-8 lg:p-12">
+<div class="mb-12">
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-bold text-primary uppercase tracking-widest">Step 1 of 3: Item Details</span>
+<span class="text-xs font-bold text-slate-400 uppercase">35% Complete</span>
+</div>
+<div class="w-full h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="w-[35%] h-full bg-primary transition-all duration-500"></div>
+</div>
+</div>
+<form class="space-y-8">
+<div class="space-y-2">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-200" for="item-name">What did you lose?</label>
+<input class="w-full px-5 py-4 bg-slate-50 dark:bg-slate-900 border-none rounded-2xl focus:ring-2 focus:ring-primary text-lg font-medium" id="item-name" placeholder="e.g., Blue Leather Wallet, Golden Retriever" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-200">Have a photo?</label>
+<div class="border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-3xl p-10 flex flex-col items-center justify-center gap-4 bg-slate-50/50 dark:bg-slate-900/30 group hover:border-primary/50 transition-colors cursor-pointer">
+<div class="size-16 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-primary bento-shadow group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">cloud_upload</span>
+</div>
+<div class="text-center">
+<p class="font-bold text-slate-900 dark:text-white">Drag &amp; drop or click to upload</p>
+<p class="text-xs text-slate-400 mt-1">High-quality photos help neighbors identify items faster</p>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-200">Where was it last seen?</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary">location_on</span>
+<input class="w-full pl-12 pr-5 py-4 bg-slate-50 dark:bg-slate-900 border-none rounded-2xl focus:ring-2 focus:ring-primary font-medium" placeholder="Search address or neighborhood..." type="text"/>
+</div>
+<div class="h-64 rounded-3xl bg-slate-200 dark:bg-slate-900 relative overflow-hidden mt-4">
+<div class="absolute inset-0 map-mesh opacity-20"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="relative">
+<div class="size-12 rounded-full bg-primary/20 animate-ping absolute -inset-0"></div>
+<div class="size-12 rounded-full bg-primary text-white flex items-center justify-center relative z-10 shadow-xl">
+<span class="material-symbols-outlined">person_pin_circle</span>
+</div>
+</div>
+</div>
+<div class="absolute bottom-4 left-4 right-4 glass-panel p-3 rounded-2xl flex items-center justify-between">
+<span class="text-xs font-bold text-slate-700">Central Park South, NYC</span>
+<button class="text-[10px] font-black uppercase text-primary hover:underline" type="button">Adjust Pin</button>
+</div>
+</div>
+</div>
+<div class="pt-6 flex items-center justify-between border-t border-slate-100 dark:border-white/10">
+<button class="text-slate-400 font-bold hover:text-slate-600 transition-colors" type="button">Cancel</button>
+<button class="bg-primary text-white px-10 py-4 rounded-2xl font-bold text-lg hover:shadow-xl hover:shadow-primary/20 transition-all" type="button">Next Step: Description</button>
+</div>
+</form>
+</div>
+</div>
+<div class="lg:col-span-5 space-y-8">
+<div class="bg-slate-900 rounded-[2.5rem] p-6 text-white relative overflow-hidden group">
+<div class="absolute top-0 right-0 size-40 bg-primary/20 rounded-full blur-3xl"></div>
+<div class="relative z-10 space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-bold flex items-center gap-2">
+<span class="size-2 bg-green-500 rounded-full animate-pulse"></span>
+                                    Live Community Activity
+                                </h3>
+<span class="text-[10px] font-black uppercase tracking-widest text-primary">NY Area</span>
+</div>
+<div class="space-y-3 max-h-[450px] overflow-y-auto pr-2 custom-scrollbar">
+<div class="bg-white/5 hover:bg-white/10 p-3 rounded-2xl transition-colors cursor-pointer border border-white/5">
+<div class="flex gap-3">
+<div class="size-12 rounded-xl overflow-hidden shrink-0">
+<img alt="Item" class="size-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT0MVK3stR7AcWlTkqp8Gw2QAaZsix9qbkkqHrM7mzDpWNeZg3Cwc6kwzU5i_Ok2hAfEYI1x3CL4yxuvTQ-zVW1CO4qFsW0Q0LjI-BVusjqaE_uaI4boL65aVUcE5hN5dti0wv8KpB2P4fKxjeDI_lXEAytOkhkCYQHXW6jKfnMh75Fj7Y7U0aQjFeDHtPWyOxMKhwPXWTtlawSP0nnY_s5v0aohxML7n9_9hLnhqNS88aBVDlIOcFPMPSTVADve62Gv13e8ztZi4d"/>
+</div>
+<div>
+<p class="text-sm font-bold">New Finding: Silver iPhone</p>
+<p class="text-[10px] text-slate-400">2 min ago • 0.5 miles from you</p>
+<div class="mt-2 flex -space-x-1.5">
+<div class="size-4 rounded-full border-2 border-slate-900 bg-primary flex items-center justify-center text-[6px] font-black">S</div>
+<div class="size-4 rounded-full border-2 border-slate-900 bg-secondary flex items-center justify-center text-[6px] font-black">M</div>
+<span class="text-[8px] ml-2 text-slate-400 self-center">8 neighbors watching</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-secondary/10 p-3 rounded-2xl border border-secondary/20">
+<div class="flex gap-3">
+<div class="size-12 rounded-xl bg-secondary/20 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined">volunteer_activism</span>
+</div>
+<div>
+<p class="text-sm font-bold text-secondary">Success Story!</p>
+<p class="text-xs italic text-slate-300">"Cooper the Pug is home!"</p>
+<p class="text-[10px] text-slate-500 mt-1">Found by Sarah J. • Times Square</p>
+</div>
+</div>
+</div>
+<div class="bg-white/5 hover:bg-white/10 p-3 rounded-2xl transition-colors cursor-pointer border border-white/5">
+<div class="flex gap-3">
+<div class="size-12 rounded-xl overflow-hidden shrink-0">
+<img alt="Item" class="size-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXadxf6qS_jA9E6caWkRhLVO2ogIgLW_pzJYDcmAoTz_KRjCuX1UZBgqfknS2smzL3c3I5WfcePzKY2Il2gHWKsod0Mys4jaP7A6V0phentB9IOdiz529KCGLdZgOLHV4APMnG8M2nn9mrpJEeuMG_upDj3eBR75q5LpIUEsoFYyf9KSGTxjcfyc0Sr7iLqcMRVl62xN6aDATmB8-3t99PbkIghda5fYi8-HeV5jK0K9zY4ZfAGc4TdCkohBK5Yb9F4702lNTAzc4X"/>
+</div>
+<div>
+<p class="text-sm font-bold">Alert: Lost Golden Pup</p>
+<p class="text-[10px] text-accent font-black uppercase">Urgent • Just Reported</p>
+</div>
+</div>
+</div>
+<div class="bg-white/5 hover:bg-white/10 p-3 rounded-2xl transition-colors cursor-pointer border border-white/5">
+<div class="flex gap-3">
+<div class="size-12 rounded-xl overflow-hidden shrink-0">
+<img alt="Item" class="size-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_H079jEXTyflXYSe304KR9l8rV8lcXkkLHW_EgI0_zFqTx9OahBQCHTb2Ai54xcoK5IbzCm-SdDdRfwxJyPQNdYjn-TTvdn77PgRKH7At9r5JEfEFszPfBUU62ugSK1BfxqxyG4_-sRiCqYmDtyoUn5PKGzFiVhj8CP2SwGr5l-QWRaMhzPcDogQTpMazpCobDl9J_w-oJXA73lr7rq8Vg7LJtpgKiHh56fAS3yIAl_jTqUJZ5CQdLVsp4ZMcTNF62Zr0vJ8_aAMx"/>
+</div>
+<div>
+<p class="text-sm font-bold">Found: Brown Wallet</p>
+<p class="text-[10px] text-slate-400">1 hour ago • subway station</p>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-3 bg-white/10 hover:bg-white/20 rounded-xl text-sm font-bold transition-colors">
+                                Open Full Interactive Map
+                            </button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-[2.5rem] p-8 border border-slate-100 dark:border-white/10 bento-shadow">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">security</span>
+<h4 class="text-lg font-bold mb-2">Safety First</h4>
+<p class="text-sm text-slate-500 leading-relaxed">Always meet in public places for item exchanges. Our "Safe Exchanges" spots are marked in green on the live map.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="px-6 lg:px-40 py-12 border-t border-slate-100 dark:border-white/5">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewBox="0 0 48 48">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
+</svg>
+</div>
+<span class="font-bold">CommunityHub</span>
+</div>
+<div class="flex gap-8 text-sm text-slate-500 font-medium">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Safety Guidelines</a>
+<a class="hover:text-primary transition-colors" href="#">Reunion Stories</a>
+</div>
+<div class="flex gap-4">
+<a class="size-10 bg-slate-100 dark:bg-white/5 rounded-full flex items-center justify-center text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto mt-8 pt-8 border-t border-slate-50 dark:border-white/5 text-center text-xs text-slate-400 uppercase tracking-widest font-bold">
+            © 2024 CommunityHub. One community, zero lost belongings.
+        </div>
+</footer>
+</div>
+
+</body></html>

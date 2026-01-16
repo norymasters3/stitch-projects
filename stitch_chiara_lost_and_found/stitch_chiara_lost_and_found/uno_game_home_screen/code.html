@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Uno Game Home Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f53dc7",
+                        "uno-blue": "#0A95FF",
+                        "uno-green": "#80FF1A",
+                        "uno-red": "#FF3B30",
+                        "background-light": "#f9fafa",
+                        "background-dark": "#1a1d23",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .uno-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(245, 61, 199, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(245, 61, 199, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181116] dark:text-white min-h-screen flex flex-col overflow-x-hidden uno-pattern">
+<!-- Top Profile Header -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-3 flex flex-col gap-2 border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="size-12 rounded-full border-2 border-primary overflow-hidden bg-gray-200">
+<img alt="User avatar with energetic expression" class="w-full h-full object-cover" data-alt="Cartoon avatar of a smiling young player" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoxuuiubVTSpMk4TV1vBSmvylyzGt2bymNYfg2fxLJHrEsFjdRGPxvIHCjIjvQfFyNrBBFYf1Rt_im17eSNcu0JxcxtRdWGY7xmobsH7S63PNilxE5Tne95Ag28HgnDS3CnPlsmA718kHaGOg9B1Kko0ZLuUQkpcCYlZP5-xQiBk4Iyo8RmafZ74nTckbxKSjL97mouGZ8wBsCa157w_RAuiSZP2m8EfMj8F-dwzPAZmTUV9wjcMpkgryAdL9UKzwjwIRMY6pxsN8"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white dark:border-background-dark">
+                        24
+                    </div>
+</div>
+<div>
+<h1 class="text-sm font-bold leading-none">PLAYER_ONE</h1>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px] text-yellow-500 fill-1">workspace_premium</span>
+<span class="text-[10px] font-bold text-gray-500 tracking-wider">PRO LEAGUE</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
+<div class="flex items-center gap-1">
+<span class="text-xs font-bold">12,450</span>
+<span class="text-xs">🪙</span>
+</div>
+<div class="w-[1px] h-3 bg-gray-300 dark:bg-gray-600"></div>
+<div class="flex items-center gap-1">
+<span class="text-xs font-bold">142</span>
+<span class="text-xs">💎</span>
+</div>
+<button class="ml-1 text-primary">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="flex flex-col gap-1 px-1">
+<div class="flex justify-between items-end">
+<span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Experience</span>
+<span class="text-[10px] font-bold text-primary">840 / 1200 XP</span>
+</div>
+<div class="h-1.5 w-full bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[70%]"></div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center justify-center px-4 py-8 relative">
+<!-- Background Graphic Elements -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+<!-- Large Central UNO Logo -->
+<div class="relative mb-12 transform -rotate-2">
+<div class="absolute inset-0 bg-primary blur-3xl opacity-20 scale-150"></div>
+<h2 class="text-8xl md:text-9xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-primary via-[#ff7edb] to-primary drop-shadow-[0_10px_10px_rgba(0,0,0,0.1)] text-glow">
+                UNO
+            </h2>
+<div class="absolute -top-4 -right-4 bg-uno-red text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg transform rotate-12">
+                MOBILE
+            </div>
+</div>
+<!-- Game Mode Selection -->
+<div class="w-full max-w-md space-y-4">
+<!-- Quick Play (Primary CTA) -->
+<button class="group relative w-full overflow-hidden rounded-xl bg-primary p-0.5 transition-transform active:scale-95">
+<div class="relative flex items-center justify-between bg-primary px-6 py-5 rounded-[10px]">
+<div class="flex flex-col items-start">
+<span class="text-white/80 text-[10px] font-bold tracking-widest uppercase">Instant Match</span>
+<span class="text-white text-2xl font-black tracking-tight italic uppercase">Quick Play</span>
+</div>
+<div class="bg-white/20 p-3 rounded-lg backdrop-blur-sm">
+<span class="material-symbols-outlined text-white text-3xl">bolt</span>
+</div>
+</div>
+</button>
+<!-- Play with Friends (Secondary CTA) -->
+<button class="group relative w-full overflow-hidden rounded-xl bg-uno-blue p-0.5 transition-transform active:scale-95">
+<div class="relative flex items-center justify-between bg-uno-blue px-6 py-5 rounded-[10px]">
+<div class="flex flex-col items-start">
+<span class="text-white/80 text-[10px] font-bold tracking-widest uppercase">Social Mode</span>
+<span class="text-white text-2xl font-black tracking-tight italic uppercase">With Friends</span>
+</div>
+<div class="bg-white/20 p-3 rounded-lg backdrop-blur-sm">
+<span class="material-symbols-outlined text-white text-3xl">groups</span>
+</div>
+</div>
+</button>
+<!-- Small Actions Row -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex flex-col items-center justify-center gap-2 bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm active:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined text-uno-green text-3xl">emoji_events</span>
+<span class="text-xs font-bold uppercase tracking-wider">Tournaments</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm active:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined text-yellow-500 text-3xl">stars</span>
+<span class="text-xs font-bold uppercase tracking-wider">Season Pass</span>
+</button>
+</div>
+</div>
+<!-- Season Progress Card Mini -->
+<div class="mt-8 w-full max-w-md bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-4 rounded-xl border border-dashed border-gray-300 dark:border-gray-700">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 shrink-0 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">card_membership</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-[10px] font-bold uppercase">Daily Quest: Win 3 Matches</span>
+<span class="text-[10px] font-bold">2/3</span>
+</div>
+<div class="h-1 w-full bg-gray-200 dark:bg-gray-700 rounded-full">
+<div class="h-full bg-uno-green rounded-full w-[66%]"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="sticky bottom-0 z-50 bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800 px-6 py-3 pb-8">
+<div class="flex items-center justify-between max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-primary fill-1">house</span>
+<span class="text-[10px] font-bold text-primary">HOME</span>
+</a>
+<a class="flex flex-col items-center gap-1 group text-gray-400" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-[10px] font-bold group-hover:text-primary transition-colors">SHOP</span>
+</a>
+<div class="relative -top-4">
+<button class="bg-primary text-white size-14 rounded-full shadow-[0_8px_20px_rgba(245,61,199,0.4)] flex items-center justify-center transform transition-transform hover:scale-110 active:scale-95">
+<span class="material-symbols-outlined text-3xl">style</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 group text-gray-400" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="text-[10px] font-bold group-hover:text-primary transition-colors">RANKS</span>
+</a>
+<a class="flex flex-col items-center gap-1 group text-gray-400" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold group-hover:text-primary transition-colors">SETTINGS</span>
+</a>
+</div>
+</nav>
+<!-- Dynamic Overlay Pattern (Bottom) -->
+<div class="fixed inset-0 pointer-events-none opacity-5 dark:opacity-10 z-0 overflow-hidden">
+<div class="absolute -bottom-20 -left-20 transform rotate-12 scale-150">
+<img alt="Abstract uno card shapes" class="w-full h-auto opacity-30" data-alt="Abstract silhouettes of cards with arrows and numbers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNOKK02Ac5DeSfNHXAp6kHCXH-CQLlZmXCTyqDxq32XqJH0ydHF2bCbuFGSAj_dTkrErhsNLzdsmu7WmhWOmZyWgZ_S5Q9c0Xo9jg2_bJkswLaVYJMXIFyYgjODjCIqjDm_xO_fjZ5lg-Gv47M9U1o1NQrb2-owWBByTi_rfNMOFdK5r4OqJOMlzqIMbMk4Zv3rmAp79g28PqbhO58jF6OojUGuWAghPFZbEnOKff0aW_lfs4UKvyFJpz3HOenq5nQcJgio9wlrpo"/>
+</div>
+</div>
+</body></html>

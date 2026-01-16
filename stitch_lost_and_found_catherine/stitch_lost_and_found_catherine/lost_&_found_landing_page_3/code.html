@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Community Hub - LostFound</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#22a8c3",
+                        "secondary": "#f39c12",
+                        "accent": "#e74c3c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#121e20",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Epilogue', sans-serif;
+        }
+        .bento-shadow {
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+        }
+        .map-gradient {
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(246,248,248,1) 100%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#121617] dark:text-white transition-colors duration-300">
+<div class="layout-container flex flex-col min-h-screen">
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-[#f0f3f4] dark:border-white/10 px-6 lg:px-40 py-4">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<svg class="size-6" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight">CommunityHub <span class="text-primary font-black">.</span></h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors flex items-center gap-1" href="#"><span class="material-symbols-outlined text-lg">map</span>Live Map</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors flex items-center gap-1" href="#"><span class="material-symbols-outlined text-lg">volunteer_activism</span>Success Stories</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors flex items-center gap-1" href="#"><span class="material-symbols-outlined text-lg">groups</span>Local Tribes</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:block text-sm font-semibold px-4 py-2">Log In</button>
+<button class="bg-primary text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:opacity-90 transition-all shadow-md">
+                    Join Community
+                </button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<section class="px-6 lg:px-40 pt-10 pb-16 overflow-hidden">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-7 space-y-8">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-bold">
+<span class="material-symbols-outlined text-sm">celebration</span>
+<span>42 items reunited just this morning!</span>
+</div>
+<h1 class="text-5xl lg:text-7xl font-black leading-[1] tracking-tight text-slate-900 dark:text-white">
+                        Stronger <span class="text-primary">Together.</span><br/>Belongings Reunited.
+                    </h1>
+<p class="text-xl text-slate-600 dark:text-slate-400 max-w-xl">
+                        Welcome to your local neighborhood safety net. We don't just find things; we build connections that bring communities closer.
+                    </p>
+<div class="grid grid-cols-3 gap-4 pt-4">
+<div class="bg-white dark:bg-white/5 p-4 rounded-2xl border border-slate-100 dark:border-white/10">
+<p class="text-2xl font-black text-primary">12,480</p>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Global Reunions</p>
+</div>
+<div class="bg-white dark:bg-white/5 p-4 rounded-2xl border border-slate-100 dark:border-white/10">
+<p class="text-2xl font-black text-secondary">92%</p>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Return Rate</p>
+</div>
+<div class="bg-white dark:bg-white/5 p-4 rounded-2xl border border-slate-100 dark:border-white/10">
+<p class="text-2xl font-black text-accent">5k+</p>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Active Neighbors</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="flex items-center gap-3 px-8 py-5 bg-primary text-white rounded-2xl font-bold text-lg hover:shadow-xl hover:shadow-primary/20 transition-all group">
+<span class="material-symbols-outlined group-hover:rotate-12 transition-transform">search</span>
+                            I Lost Something
+                        </button>
+<button class="flex items-center gap-3 px-8 py-5 bg-white border-2 border-slate-100 dark:bg-white/5 dark:border-white/10 text-slate-900 dark:text-white rounded-2xl font-bold text-lg hover:bg-slate-50 dark:hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+                            I Found Something
+                        </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="relative z-10 bg-white dark:bg-slate-800 p-6 rounded-[2.5rem] bento-shadow border border-slate-100 dark:border-white/10 overflow-hidden">
+<div class="aspect-[4/5] rounded-3xl overflow-hidden mb-6 relative">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXadxf6qS_jA9E6caWkRhLVO2ogIgLW_pzJYDcmAoTz_KRjCuX1UZBgqfknS2smzL3c3I5WfcePzKY2Il2gHWKsod0Mys4jaP7A6V0phentB9IOdiz529KCGLdZgOLHV4APMnG8M2nn9mrpJEeuMG_upDj3eBR75q5LpIUEsoFYyf9KSGTxjcfyc0Sr7iLqcMRVl62xN6aDATmB8-3t99PbkIghda5fYi8-HeV5jK0K9zY4ZfAGc4TdCkohBK5Yb9F4702lNTAzc4X');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 text-white">
+<span class="inline-block px-3 py-1 rounded-full bg-secondary/90 text-[10px] font-black uppercase mb-2">Featured Reunion</span>
+<h4 class="text-xl font-bold">"Cooper found his way home!"</h4>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full overflow-hidden border-2 border-primary">
+<img alt="User" class="bg-slate-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOnqjCkr5GZxKy7yPtQYFPHNR3t6Hcl9NC9kWBLhOxZUBVhrHquNkdIVE7ItXXM9OsKGn4fd32oSReYUNdB4_Q_xOuVxbMNqPOhOwfl6jGJSg-1qveixoPMF1oIJTPkNBpcXsgJnHir_-kVCi5yfM4_9c9gOh5liykCo3pGWqxJRAxhX-SIfv7sf4f90Z1sekM3xvxaIPdaF_gEV96pjAOefrd0fj9YERe-cWjsdMm1ykzJ4T-viaESA4Q3LZEQ7fUDSwHidUY0ehd"/>
+</div>
+<div>
+<p class="font-bold text-sm">Sarah Jenkins</p>
+<p class="text-xs text-slate-500 italic">"Thanks to the alert, a neighbor spotted him within 30 minutes. Unbelievable community!"</p>
+</div>
+</div>
+</div>
+<div class="absolute -top-10 -right-10 size-64 bg-primary/20 rounded-full blur-3xl -z-10"></div>
+<div class="absolute -bottom-10 -left-10 size-64 bg-secondary/20 rounded-full blur-3xl -z-10"></div>
+</div>
+</div>
+</section>
+<section class="px-6 lg:px-40 py-20 bg-slate-50 dark:bg-white/5">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-primary font-bold uppercase text-xs tracking-widest">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+</span>
+                            Live Neighborhood Feed
+                        </div>
+<h2 class="text-4xl font-black tracking-tight">Happening Near You</h2>
+<p class="text-slate-500">Real-time alerts and discoveries from your current location.</p>
+</div>
+<div class="flex gap-2">
+<button class="px-5 py-2.5 bg-white dark:bg-white/10 rounded-xl font-bold text-sm border border-slate-100 dark:border-white/5 shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">tune</span> Filters
+                        </button>
+<button class="px-5 py-2.5 bg-primary text-white rounded-xl font-bold text-sm shadow-lg shadow-primary/20">
+                            Set Alert
+                        </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-4 space-y-4 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+<div class="bg-white dark:bg-white/5 p-4 rounded-2xl border-l-4 border-primary shadow-sm hover:translate-x-1 transition-transform cursor-pointer">
+<div class="flex gap-4">
+<div class="size-16 rounded-xl overflow-hidden shrink-0">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAT0MVK3stR7AcWlTkqp8Gw2QAaZsix9qbkkqHrM7mzDpWNeZg3Cwc6kwzU5i_Ok2hAfEYI1x3CL4yxuvTQ-zVW1CO4qFsW0Q0LjI-BVusjqaE_uaI4boL65aVUcE5hN5dti0wv8KpB2P4fKxjeDI_lXEAytOkhkCYQHXW6jKfnMh75Fj7Y7U0aQjFeDHtPWyOxMKhwPXWTtlawSP0nnY_s5v0aohxML7n9_9hLnhqNS88aBVDlIOcFPMPSTVADve62Gv13e8ztZi4d');"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-sm truncate">iPhone 13 found</h4>
+<span class="text-[10px] font-bold text-primary whitespace-nowrap">2m ago</span>
+</div>
+<div class="flex items-center gap-1 text-slate-400 text-[11px] mb-2">
+<span class="material-symbols-outlined text-xs">location_on</span>
+<span>0.5 miles from you</span>
+</div>
+<div class="flex -space-x-2">
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200 text-[8px] flex items-center justify-center font-bold">+12</div>
+<p class="text-[10px] self-center ml-2 text-slate-500">Neighbors verified</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-white/5 p-4 rounded-2xl border-l-4 border-secondary shadow-sm hover:translate-x-1 transition-transform cursor-pointer">
+<div class="flex gap-4">
+<div class="size-16 rounded-xl overflow-hidden shrink-0">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSncqjl9vhltdNiPYEe3SGVk4wrtoPJTPnzF2HaXGAmyfgGtZ-5H5fl_aHeM5jVtWQ2zoUZ1yPLKXkUwwvz4j61UVDBRiHjysPFHHfe7i2LKlPq5Qe9_7iOzavNrAS_7-CR_0bzh0T9k0Gc38FxwIAGbJWOABWh0aeHf_WLHAdV1fyCNqwE3JIb9wPfD6A97I0Zc-6E7F6qy6f5-zdprv6g07uAw6Lpe8EDD3aPYZ3KW1jt1ubD3MY-fW2paZ4w-HbSOSg_EaNIbOI');"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-sm truncate">Keys at Coffee Shop</h4>
+<span class="text-[10px] font-bold text-slate-400 whitespace-nowrap">15m ago</span>
+</div>
+<div class="flex items-center gap-1 text-slate-400 text-[11px] mb-2">
+<span class="material-symbols-outlined text-xs">location_on</span>
+<span>Downtown Branch</span>
+</div>
+<span class="inline-block px-2 py-0.5 rounded-full bg-secondary/10 text-secondary text-[10px] font-bold">In Safe Keeping</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-white/5 p-4 rounded-2xl border-l-4 border-accent shadow-sm hover:translate-x-1 transition-transform cursor-pointer">
+<div class="flex gap-4">
+<div class="size-16 rounded-xl bg-slate-100 flex items-center justify-center text-accent shrink-0">
+<span class="material-symbols-outlined text-3xl">notifications_active</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-sm truncate uppercase tracking-tighter text-accent">Missing Pet Alert</h4>
+<span class="text-[10px] font-bold text-accent whitespace-nowrap">Active Now</span>
+</div>
+<p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-1">Tabby cat seen near Park Ave...</p>
+<button class="mt-2 text-[10px] font-bold text-accent hover:underline uppercase">View Description</button>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8 relative min-h-[400px] lg:min-h-0 bg-slate-200 dark:bg-slate-700 rounded-3xl overflow-hidden bento-shadow border border-white dark:border-white/5">
+<div class="absolute inset-0 bg-[#e5e7eb] dark:bg-[#2d3748]">
+<div class="absolute top-1/4 left-1/3 group cursor-pointer">
+<div class="bg-primary text-white p-2 rounded-full shadow-xl animate-bounce">
+<span class="material-symbols-outlined text-sm">inventory_2</span>
+</div>
+<div class="absolute hidden group-hover:block bottom-full mb-2 left-1/2 -translate-x-1/2 w-48 bg-white dark:bg-slate-800 p-2 rounded-xl shadow-2xl text-center z-50">
+<p class="font-bold text-xs">Recently Found Laptop</p>
+<p class="text-[10px] text-slate-500">2 hours ago • Public Library</p>
+</div>
+</div>
+<div class="absolute top-1/2 right-1/4 group cursor-pointer">
+<div class="bg-secondary text-white p-2 rounded-full shadow-xl">
+<span class="material-symbols-outlined text-sm">pets</span>
+</div>
+</div>
+<div class="absolute bottom-1/3 left-1/2 group cursor-pointer">
+<div class="bg-accent text-white p-2 rounded-full shadow-xl">
+<span class="material-symbols-outlined text-sm">priority_high</span>
+</div>
+</div>
+</div>
+<div class="absolute top-4 left-4 flex flex-col gap-2">
+<button class="size-10 glass-panel rounded-xl flex items-center justify-center text-slate-700 hover:bg-white"><span class="material-symbols-outlined">add</span></button>
+<button class="size-10 glass-panel rounded-xl flex items-center justify-center text-slate-700 hover:bg-white"><span class="material-symbols-outlined">remove</span></button>
+</div>
+<div class="absolute bottom-4 right-4 glass-panel px-4 py-2 rounded-xl flex items-center gap-3">
+<div class="flex items-center gap-1">
+<div class="size-2 rounded-full bg-primary"></div>
+<span class="text-[10px] font-bold">Found</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="size-2 rounded-full bg-accent"></div>
+<span class="text-[10px] font-bold">Lost</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="size-2 rounded-full bg-secondary"></div>
+<span class="text-[10px] font-bold">In-Transit</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 lg:px-40 py-20 bg-white dark:bg-background-dark">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex items-end justify-between mb-10">
+<div class="space-y-1">
+<h2 class="text-3xl font-bold tracking-tight">Recent Findings Gallery</h2>
+<p class="text-slate-500">Curated list of items discovered in the last 24 hours.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-1 hover:underline" href="#">
+                        Browse All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="group bg-slate-50 dark:bg-white/5 p-4 rounded-3xl bento-shadow border border-transparent hover:border-primary/50 transition-all">
+<div class="relative mb-4 aspect-square rounded-2xl overflow-hidden bg-slate-100">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAT0MVK3stR7AcWlTkqp8Gw2QAaZsix9qbkkqHrM7mzDpWNeZg3Cwc6kwzU5i_Ok2hAfEYI1x3CL4yxuvTQ-zVW1CO4qFsW0Q0LjI-BVusjqaE_uaI4boL65aVUcE5hN5dti0wv8KpB2P4fKxjeDI_lXEAytOkhkCYQHXW6jKfnMh75Fj7Y7U0aQjFeDHtPWyOxMKhwPXWTtlawSP0nnY_s5v0aohxML7n9_9hLnhqNS88aBVDlIOcFPMPSTVADve62Gv13e8ztZi4d");'></div>
+<div class="absolute top-3 left-3 px-3 py-1 bg-primary text-white text-[10px] font-black uppercase rounded-full shadow-lg">New Find</div>
+</div>
+<div class="space-y-2">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white truncate">iPhone 13 - Silver</h3>
+<div class="flex items-center gap-1 text-slate-500 text-sm">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Central Park, NY</span>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-200 dark:border-white/5">
+<span class="text-xs text-slate-400 font-medium">2 hours ago</span>
+<button class="text-primary font-bold text-xs hover:underline">View Details</button>
+</div>
+</div>
+</div>
+<div class="group bg-slate-50 dark:bg-white/5 p-4 rounded-3xl bento-shadow border border-transparent hover:border-primary/50 transition-all">
+<div class="relative mb-4 aspect-square rounded-2xl overflow-hidden bg-slate-100">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCXadxf6qS_jA9E6caWkRhLVO2ogIgLW_pzJYDcmAoTz_KRjCuX1UZBgqfknS2smzL3c3I5WfcePzKY2Il2gHWKsod0Mys4jaP7A6V0phentB9IOdiz529KCGLdZgOLHV4APMnG8M2nn9mrpJEeuMG_upDj3eBR75q5LpIUEsoFYyf9KSGTxjcfyc0Sr7iLqcMRVl62xN6aDATmB8-3t99PbkIghda5fYi8-HeV5jK0K9zY4ZfAGc4TdCkohBK5Yb9F4702lNTAzc4X");'></div>
+<div class="absolute top-3 left-3 px-3 py-1 bg-accent text-white text-[10px] font-black uppercase rounded-full shadow-lg">Urgent</div>
+</div>
+<div class="space-y-2">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white truncate">Golden Retriever Pup</h3>
+<div class="flex items-center gap-1 text-slate-500 text-sm">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Downtown Seattle, WA</span>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-200 dark:border-white/5">
+<span class="text-xs text-slate-400 font-medium">Found yesterday</span>
+<button class="text-primary font-bold text-xs hover:underline">View Details</button>
+</div>
+</div>
+</div>
+<div class="group bg-slate-50 dark:bg-white/5 p-4 rounded-3xl bento-shadow border border-transparent hover:border-primary/50 transition-all">
+<div class="relative mb-4 aspect-square rounded-2xl overflow-hidden bg-slate-100">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_H079jEXTyflXYSe304KR9l8rV8lcXkkLHW_EgI0_zFqTx9OahBQCHTb2Ai54xcoK5IbzCm-SdDdRfwxJyPQNdYjn-TTvdn77PgRKH7At9r5JEfEFszPfBUU62ugSK1BfxqxyG4_-sRiCqYmDtyoUn5PKGzFiVhj8CP2SwGr5l-QWRaMhzPcDogQTpMazpCobDl9J_w-oJXA73lr7rq8Vg7LJtpgKiHh56fAS3yIAl_jTqUJZ5CQdLVsp4ZMcTNF62Zr0vJ8_aAMx");'></div>
+<div class="absolute top-3 left-3 px-3 py-1 bg-slate-400 text-white text-[10px] font-black uppercase rounded-full shadow-lg">Verified</div>
+</div>
+<div class="space-y-2">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white truncate">Brown Leather Wallet</h3>
+<div class="flex items-center gap-1 text-slate-500 text-sm">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>London Underground</span>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-200 dark:border-white/5">
+<span class="text-xs text-slate-400 font-medium">Found 3 days ago</span>
+<button class="text-primary font-bold text-xs hover:underline">View Details</button>
+</div>
+</div>
+</div>
+<div class="group bg-slate-50 dark:bg-white/5 p-4 rounded-3xl bento-shadow border border-transparent hover:border-primary/50 transition-all">
+<div class="relative mb-4 aspect-square rounded-2xl overflow-hidden bg-slate-100">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSncqjl9vhltdNiPYEe3SGVk4wrtoPJTPnzF2HaXGAmyfgGtZ-5H5fl_aHeM5jVtWQ2zoUZ1yPLKXkUwwvz4j61UVDBRiHjysPFHHfe7i2LKlPq5Qe9_7iOzavNrAS_7-CR_0bzh0T9k0Gc38FxwIAGbJWOABWh0aeHf_WLHAdV1fyCNqwE3JIb9wPfD6A97I0Zc-6E7F6qy6f5-zdprv6g07uAw6Lpe8EDD3aPYZ3KW1jt1ubD3MY-fW2paZ4w-HbSOSg_EaNIbOI");'></div>
+<div class="absolute top-3 left-3 px-3 py-1 bg-primary text-white text-[10px] font-black uppercase rounded-full shadow-lg">New Find</div>
+</div>
+<div class="space-y-2">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white truncate">Set of 3 House Keys</h3>
+<div class="flex items-center gap-1 text-slate-500 text-sm">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Austin, TX</span>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-200 dark:border-white/5">
+<span class="text-xs text-slate-400 font-medium">Found 4 days ago</span>
+<button class="text-primary font-bold text-xs hover:underline">View Details</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 lg:px-40 py-16">
+<div class="max-w-[1200px] mx-auto bg-slate-900 rounded-[3rem] p-12 text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 size-64 bg-primary/20 rounded-full blur-[80px]"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1 text-center md:text-left space-y-4">
+<h2 class="text-3xl md:text-5xl font-black">Make your neighborhood safer today.</h2>
+<p class="text-slate-400 text-lg max-w-lg">Join 50,000+ neighbors who are actively watching out for each other. It's free, it's local, and it works.</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
+<button class="bg-primary hover:bg-primary/90 px-8 py-4 rounded-2xl font-bold text-lg transition-all">Join the Hub</button>
+<button class="bg-white/10 hover:bg-white/20 px-8 py-4 rounded-2xl font-bold text-lg transition-all backdrop-blur-md">Learn More</button>
+</div>
+</div>
+<div class="hidden lg:flex gap-4">
+<div class="flex -space-x-4">
+<img alt="U1" class="size-16 rounded-full border-4 border-slate-900 bg-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaeUGKLHof5uiN4AmZg5dCtFCGw02Ry71PdNGeYmMFUQJDLSqdZbHeMBVT1Fd4xeqXySS-IyqNE4HZJLVJ3LVerTEJltImf_pN1wX6XFh8TOtqQs90XjWWHlOdSrSVUvgiUx3S5tDs_fagEX6keSUTSuMwcvBvkSqRuvsr6ZnwJ5GfzX5SXXoh-v0XX5LQgy5WMnGqkLVwEuX0ujFVuQh7TiqLGaAvq2evtATI84ExCzHIGBXpvKpN8SBUl8ZmdOxwVQJ6PAq8dkBw"/>
+<img alt="U2" class="size-16 rounded-full border-4 border-slate-900 bg-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJp-MsOJKhUNDfYr1C0Da-y8XbTHTZWWPiLitNRtZitu0SuYFLcikf2oCQ9Iaqt3y2TMTRBEMoKGS3vCY8q0RbLmj-1AWRC-NhC0N8GVe-5-kuAGNOjRcKQ6FyZbzwaRtzusJhegS3bQmniN-7OnQWtP7OYHX0O8yee1kcaqIuFyMDW4Vl5w_csBmtFsnbfjJvLRQbNNPefjMMgjxD6Kkf2O9R_wDxJGT6H7pwrtQGrk7V6_jOkHtSa_hM3TAaiiVdCi0JsBoaVked"/>
+<img alt="U3" class="size-16 rounded-full border-4 border-slate-900 bg-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG9k9Fp_dRmng1Ta8z9MmLBgEnNypNyTnnnchyGvPk0xsFA3A0rv_sTue1nrC1nMb_D35E6rvCdTKoabTJbw20R2BoQy3GxUf2fGGUcpaGiJIGkmZocyLeFP1Lla59qMfMrdmclKm6J-WlJFUlYPD3OHP36fNcYA3o-0A9XTViXIkBtCLNlBwV-Yy8wMB5blR0MWICf-oWA8TeBHnF2AaY3PnDcgJPvFTxcVn33w86F2IgFcorLR-w9wV2bLTOinYMax3D2_1yMQH8"/>
+<div class="size-16 rounded-full border-4 border-slate-900 bg-primary flex items-center justify-center font-bold">+50k</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="px-6 lg:px-40 py-12 border-t border-slate-100 dark:border-white/5">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewBox="0 0 48 48">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
+</svg>
+</div>
+<span class="font-bold">CommunityHub</span>
+</div>
+<div class="flex gap-8 text-sm text-slate-500 font-medium">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Local Guidelines</a>
+<a class="hover:text-primary transition-colors" href="#">Success Map</a>
+</div>
+<div class="flex gap-4">
+<a class="size-10 bg-slate-100 dark:bg-white/5 rounded-full flex items-center justify-center text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="size-10 bg-slate-100 dark:bg-white/5 rounded-full flex items-center justify-center text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">help_outline</span>
+</a>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto mt-8 pt-8 border-t border-slate-50 dark:border-white/5 text-center text-xs text-slate-400 uppercase tracking-widest font-bold">
+            © 2024 CommunityHub. Rebuilding trust, one lost item at a time.
+        </div>
+</footer>
+</div>
+
+```</body></html>

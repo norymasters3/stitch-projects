@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Campus Lost &amp; Found Home</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#33cc99",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#131f1b",
+                        "card-light": "#ffffff",
+                        "accent-found": "#FFC77A"
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: "Be Vietnam Pro", sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#121715] dark:text-white min-h-screen">
+<div class="layout-container flex flex-col min-h-screen">
+<!-- Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-[#e2e8e5] dark:border-[#2a3a35] px-6 lg:px-40 py-3">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined block">search_check</span>
+</div>
+<h2 class="text-[#121715] dark:text-white text-lg font-bold tracking-tight">Campus Link</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-center gap-8">
+<a class="text-[#121715] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Browse All</a>
+<a class="text-[#121715] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">My Reports</a>
+<a class="text-[#121715] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Safety Tips</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center rounded-xl h-10 px-4 bg-primary text-white text-sm font-bold transition-all hover:brightness-105 active:scale-95">
+                        Login
+                    </button>
+<div class="size-10 rounded-full border-2 border-primary/20 bg-cover bg-center" data-alt="User profile avatar with friendly student illustration" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1Wtvz9dSZISgISvN_fGlsmPTQ9S8GMgEfCd9kv6W1GvM2Vx_mViqQCujhybeq1T1nMFVg8J0cBxL-nCSkP8vgopsCGEA21laTIDR-PpdmkVyp-x9aXwAws9MPXzLgm_pCnBBG8jFhCn7NfeNeEAvi7qiqgVQ4Ikv4sebSJOzqZexTgOCnHvYRipsgkF7SCpySVsQN_alMzMYVz0i252oHs8ms2FAlFF5mmjrFWiWg_ZNABqFelcVJl16x5YV07G0L7vkOduc4uw");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<section class="px-6 lg:px-40 py-12 lg:py-20">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col lg:flex-row gap-12 items-center">
+<div class="flex flex-col gap-8 flex-1">
+<div class="space-y-4">
+<h1 class="text-4xl lg:text-6xl font-black leading-tight tracking-tight text-[#121715] dark:text-white">
+                                    Lost it? <span class="text-primary">Let's find it</span> together.
+                                </h1>
+<p class="text-lg text-gray-600 dark:text-gray-400 max-w-lg">
+                                    Campus Lost &amp; Found is your community safety net. Reconnecting students with their belongings, one good deed at a time.
+                                </p>
+</div>
+<!-- Integrated Search Bar -->
+<div class="w-full max-w-xl group">
+<label class="flex flex-col min-w-40 h-16 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm group-focus-within:ring-2 ring-primary/30 transition-all">
+<div class="text-[#67837a] flex bg-white dark:bg-[#1c2a25] items-center justify-center pl-5 rounded-l-xl">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-white dark:bg-[#1c2a25] dark:text-white h-full placeholder:text-[#67837a] px-4 rounded-r-xl text-lg font-normal focus:ring-0" placeholder="What did you lose? (e.g. blue backpack, keys)"/>
+</div>
+</label>
+<!-- Quick Category Chips -->
+<div class="flex gap-2 mt-4 flex-wrap">
+<span class="px-3 py-1 bg-white dark:bg-[#1c2a25] border border-gray-100 dark:border-gray-800 rounded-full text-xs font-medium text-gray-500 cursor-pointer hover:bg-primary/10 hover:text-primary transition-colors">#Electronics</span>
+<span class="px-3 py-1 bg-white dark:bg-[#1c2a25] border border-gray-100 dark:border-gray-800 rounded-full text-xs font-medium text-gray-500 cursor-pointer hover:bg-primary/10 hover:text-primary transition-colors">#Keys</span>
+<span class="px-3 py-1 bg-white dark:bg-[#1c2a25] border border-gray-100 dark:border-gray-800 rounded-full text-xs font-medium text-gray-500 cursor-pointer hover:bg-primary/10 hover:text-primary transition-colors">#WaterBottles</span>
+<span class="px-3 py-1 bg-white dark:bg-[#1c2a25] border border-gray-100 dark:border-gray-800 rounded-full text-xs font-medium text-gray-500 cursor-pointer hover:bg-primary/10 hover:text-primary transition-colors">#Textbooks</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-xl h-14 px-6 bg-primary text-white text-base font-bold shadow-lg shadow-primary/20 hover:brightness-105 active:scale-95 transition-all">
+                                    Report Lost Item
+                                </button>
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-xl h-14 px-6 bg-white dark:bg-[#1c2a25] border border-gray-200 dark:border-gray-800 text-[#121715] dark:text-white text-base font-bold hover:bg-gray-50 dark:hover:bg-gray-800 transition-all">
+                                    I Found Something
+                                </button>
+</div>
+</div>
+<div class="flex-1 w-full max-w-[500px]">
+<div class="relative aspect-square rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/20 to-primary/5 border-8 border-white dark:border-[#1c2a25]">
+<div class="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-80" data-alt="Artistic photograph of a modern campus student lounge with soft lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsJVVp1DP1wdVJBG413jOsM_z5BNum7SRgXNwuyFoSfdKBja8HBYfO-8qmHCCCFW_isRKZ9VYxFktt8qnMwQzGfbw0yiGAM5DWw188_8NPleFPI9I5RNcrqH9is9f2riT-jnODN1EUCDPHt8xBwQXrNYEAwbC_-G9-IqzqQm1m5R-PiOgg_sDbwnJjkioUJTiU3Ew3fUupCI-9csIfgPQe2KyJ_SAjSo1Rui2sqqXxjilsaUJCRyXplJJ3Q3jq8ocg9J0Zmn6_Gw');"></div>
+<div class="absolute bottom-6 left-6 right-6 p-6 bg-white/90 dark:bg-[#1c2a25]/90 backdrop-blur rounded-2xl">
+<div class="flex items-center gap-3">
+<div class="size-3 bg-primary rounded-full animate-pulse"></div>
+<p class="text-sm font-bold text-gray-800 dark:text-gray-100">Live Community Update</p>
+</div>
+<p class="text-xs text-gray-500 mt-1 uppercase tracking-widest font-bold">12 Items recovered today</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Finds Grid -->
+<section class="bg-white dark:bg-[#0f1714] px-6 lg:px-40 py-16">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex items-center justify-between mb-10">
+<div>
+<h2 class="text-2xl lg:text-3xl font-bold text-[#121715] dark:text-white">Recent Finds</h2>
+<p class="text-gray-500 text-sm mt-1">Check if someone found what you're looking for</p>
+</div>
+<a class="text-primary font-bold text-sm flex items-center gap-1 hover:underline" href="#">
+                            View All Items <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Item Card 1 -->
+<div class="group bg-background-light dark:bg-[#1c2a25] rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/3] bg-gray-200 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Blue Hydroflask water bottle with stickers" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYxOM_R60qHUri0N6nFAthr0ITYOltGfW-M4EkVzYeADs32AdCQZdbfrOw8wm-Jq3a0RRvpYWNZUmandXTXrWUeaOGl9qvfy-NATDlDQJLlhktbKwLnDMyjogP2o3pEXnLM4cuJL9erZimDgA3dWIle9D-IHK2AUDZeklN8R2VAV9MFhOgGCD3lL4JjYXZ3m_C8p6aYdHc7nhgOcE7TLB_yxAXTA8OjWEZ7tndkDk3GbuyA_CZ8290Dp6B8XIdBdHYoznT9lzFGA');"></div>
+<div class="absolute top-3 left-3 bg-primary text-white text-[10px] font-black px-2 py-1 rounded uppercase tracking-wider">Just Found</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-[#121715] dark:text-white leading-tight">Blue HydroFlask</h3>
+<span class="text-xs font-bold text-primary px-2 py-1 bg-primary/10 rounded">Electronics</span>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
+<span class="material-symbols-outlined text-base">location_on</span>
+<span>Engineering Hall, 2nd Fl</span>
+</div>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>2 hours ago</span>
+</div>
+</div>
+<button class="mt-auto w-full py-3 rounded-xl border-2 border-primary/20 text-primary font-bold text-sm hover:bg-primary hover:text-white transition-all">
+                                    Claim This Item
+                                </button>
+</div>
+</div>
+<!-- Item Card 2 -->
+<div class="group bg-background-light dark:bg-[#1c2a25] rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/3] bg-gray-200 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Silver Apple AirPods pro case" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCk2xja4gqze8f2OXzvvmpq-Geurc_90rr5z5MrALmw81rnq6dtSlfIeVAGsUbArOdg41c7DCe3lGRy84MJdH3cMYFEU_syFghDWpFrCRi-3_iLkhCVPYOdqTyE-hCjaDbm8lwZCNjHgfpm6PIk4Lfb1qIgj3hGA1iCxUbpRFpMc4SSz3aFh_Tj9r9GqQj-hdMr6zhYlR5Y7f9BZA2YIG5XSFI27wIGOTYAifz3uwBp71sh2HI402Nnnudm59yR7EdZpnC3UnQcHQ');"></div>
+<div class="absolute top-3 left-3 bg-accent-found text-gray-900 text-[10px] font-black px-2 py-1 rounded uppercase tracking-wider">Pending Claim</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-[#121715] dark:text-white leading-tight">Apple AirPods Pro</h3>
+<span class="text-xs font-bold text-primary px-2 py-1 bg-primary/10 rounded">Audio</span>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
+<span class="material-symbols-outlined text-base">location_on</span>
+<span>Student Union Cafeteria</span>
+</div>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>5 hours ago</span>
+</div>
+</div>
+<button class="mt-auto w-full py-3 rounded-xl border-2 border-primary/20 text-primary font-bold text-sm hover:bg-primary hover:text-white transition-all">
+                                    Claim This Item
+                                </button>
+</div>
+</div>
+<!-- Item Card 3 -->
+<div class="group bg-background-light dark:bg-[#1c2a25] rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/3] bg-gray-200 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Key ring with car fob and carabiner" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0wJljwa5WbhAHHR0cxG6qJi6nNGo1qZ9NNXux-IxLCRyRBQAY5JkxGq6a7vuXjjWjnGbckIKEIfZHT-1zSUJOaAQA-OnKfz-DFoeSeBHJxiL_lAt3VQcwiAi_4hF0z3KUVmBBLX1hmoyTxZQhOA2Slw8Z0i-1xQnN9xp2myXFR_sCishBa9TJjtNDY82td6i-b9dIk62enORxp5IdMZa6jAvJviXMr7l86aFHlZy4c0QwuAxcczGmyScIhz0KAvFQvjBTV-tGPA');"></div>
+<div class="absolute top-3 left-3 bg-primary text-white text-[10px] font-black px-2 py-1 rounded uppercase tracking-wider">New Arrival</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-[#121715] dark:text-white leading-tight">Key Ring w/ FOB</h3>
+<span class="text-xs font-bold text-primary px-2 py-1 bg-primary/10 rounded">Keys</span>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
+<span class="material-symbols-outlined text-base">location_on</span>
+<span>North Parking Lot</span>
+</div>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>Yesterday</span>
+</div>
+</div>
+<button class="mt-auto w-full py-3 rounded-xl border-2 border-primary/20 text-primary font-bold text-sm hover:bg-primary hover:text-white transition-all">
+                                    Claim This Item
+                                </button>
+</div>
+</div>
+<!-- Item Card 4 -->
+<div class="group bg-background-light dark:bg-[#1c2a25] rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative aspect-[4/3] bg-gray-200 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Calculus textbook with red cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFY1NwqMOcVASbsOVGWhVRj2df5i3-qQPdKhTTKjVh56yhFRYIiP2kC8o8WH2giE6s3NYaeTzp4f-BKKzn16_rwfRaem2PwKYZ00Valw2yQn39X0TVpU4Ao-cB8lBU51tOqMIxm1cpoZcfpypYFmqWALN5xDH9-HIevobpGCtGhUiRnajWbxsNizuVfDx8Rn3RzYA6BrEuPJN5mdoQYolW7EoB8SUfNuYCcGSL_guus7A0NptxghkFDKenwHGr6bbBOip5VOGkoA');"></div>
+<div class="absolute top-3 left-3 bg-primary text-white text-[10px] font-black px-2 py-1 rounded uppercase tracking-wider">Recently Found</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-[#121715] dark:text-white leading-tight">Calculus III Text</h3>
+<span class="text-xs font-bold text-primary px-2 py-1 bg-primary/10 rounded">Books</span>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
+<span class="material-symbols-outlined text-base">location_on</span>
+<span>Central Library</span>
+</div>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>3 days ago</span>
+</div>
+</div>
+<button class="mt-auto w-full py-3 rounded-xl border-2 border-primary/20 text-primary font-bold text-sm hover:bg-primary hover:text-white transition-all">
+                                    Claim This Item
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Safety & Trust Section -->
+<section class="px-6 lg:px-40 py-16 bg-background-light dark:bg-background-dark">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 rounded-2xl bg-white dark:bg-[#1c2a25] border border-gray-100 dark:border-gray-800">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<h4 class="font-bold text-lg mb-2">Secure Exchanges</h4>
+<p class="text-sm text-gray-500 leading-relaxed">Meet only in designated campus safety zones for all item returns.</p>
+</div>
+<div class="p-8 rounded-2xl bg-white dark:bg-[#1c2a25] border border-gray-100 dark:border-gray-800">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">group</span>
+</div>
+<h4 class="font-bold text-lg mb-2">Student Verified</h4>
+<p class="text-sm text-gray-500 leading-relaxed">Platform restricted to students and staff with official campus emails.</p>
+</div>
+<div class="p-8 rounded-2xl bg-white dark:bg-[#1c2a25] border border-gray-100 dark:border-gray-800">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">history</span>
+</div>
+<h4 class="font-bold text-lg mb-2">Real-time Feed</h4>
+<p class="text-sm text-gray-500 leading-relaxed">Instant notifications when an item matching your description is posted.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-[#0f1714] border-t border-gray-100 dark:border-gray-800 px-6 lg:px-40 py-10">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="p-1.5 bg-primary/20 rounded text-primary">
+<span class="material-symbols-outlined text-sm block">search_check</span>
+</div>
+<p class="text-sm font-bold text-gray-400 uppercase tracking-tighter">Campus Link © 2024</p>
+</div>
+<div class="flex gap-8">
+<a class="text-xs text-gray-500 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs text-gray-500 hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-xs text-gray-500 hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-primary transition-colors">share</span>
+<span class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-primary transition-colors">mail</span>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
